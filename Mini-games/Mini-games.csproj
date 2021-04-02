@@ -62,10 +62,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseUsers.designer.cs">
+    <Compile Include="DatabaseUsers1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseUsers.dbml</DependentUpon>
+      <DependentUpon>DatabaseUsers1.dbml</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -87,13 +87,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="DatabaseUsers.dbml">
+    <None Include="DatabaseUsers1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DatabaseUsers.designer.cs</LastGenOutput>
+      <LastGenOutput>DatabaseUsers1.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DatabaseUsers.dbml.layout">
-      <DependentUpon>DatabaseUsers.dbml</DependentUpon>
+    <None Include="DatabaseUsers1.dbml.layout">
+      <DependentUpon>DatabaseUsers1.dbml</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

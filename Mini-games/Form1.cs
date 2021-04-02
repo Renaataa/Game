@@ -12,7 +12,7 @@ namespace Mini_games
 {
     public partial class Form1 : Form
     {
-        DatabaseUsersDataContext DatabeseDC = new DatabaseUsersDataContext();
+        DatabaseUsers1DataContext DatabeseDC = new DatabaseUsers1DataContext();
         public Form1()
         {
             InitializeComponent();
@@ -24,21 +24,27 @@ namespace Mini_games
             {
                 User newUser = new User();
                 newUser.Nickname = textBoxNickname.Text;
+                newUser.Password = textBoxPassword.Text;
 
                 DatabeseDC.Users.InsertOnSubmit(newUser);
                 DatabeseDC.SubmitChanges();
 
                 textBoxNickname.Text = "";
+                textBoxPassword.Text = "";
             }
             else
             {
-                MessageBox.Show("Write your nickname.");
+                MessageBox.Show("Write your nickname or/and password.");
             }
         }
 
         private bool IsUserFormValid()
         {
             if (textBoxNickname.Text.Length == 0)
+            {
+                return false;
+            }
+            if (textBoxPassword.Text.Length == 0)
             {
                 return false;
             }
