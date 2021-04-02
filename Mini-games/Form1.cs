@@ -12,7 +12,7 @@ namespace Mini_games
 {
     public partial class Form1 : Form
     {
-        DatabaseUsers1DataContext DatabeseDC = new DatabaseUsers1DataContext();
+        DatabaseUsersDataContext DatabeseDC = new DatabaseUsersDataContext();
         public Form1()
         {
             InitializeComponent();
