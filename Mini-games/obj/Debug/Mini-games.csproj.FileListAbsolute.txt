@@ -1,0 +1,10 @@
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\bin\Debug\Mini-games.exe.config
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\bin\Debug\Mini-games.exe
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\bin\Debug\Mini-games.pdb
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini-games.csprojAssemblyReference.cache
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.Form1.resources
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.Properties.Resources.resources
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini-games.csproj.GenerateResource.cache
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini-games.csproj.CoreCompileInputs.cache
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini-games.exe
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini-games.pdb

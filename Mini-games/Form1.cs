@@ -12,9 +12,38 @@ namespace Mini_games
 {
     public partial class Form1 : Form
     {
+        DatabaseUsersDataContext DatabeseDC = new DatabaseUsersDataContext();
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void buttonCreateAccount_Click(object sender, EventArgs e)
+        {
+            if (IsUserFormValid())
+            {
+                User newUser = new User();
+                newUser.Nickname = textBoxNickname.Text;
+
+                DatabeseDC.Users.InsertOnSubmit(newUser);
+                DatabeseDC.SubmitChanges();
+
+                textBoxNickname.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Write your nickname.");
+            }
+        }
+
+        private bool IsUserFormValid()
+        {
+            if (textBoxNickname.Text.Length == 0)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }
