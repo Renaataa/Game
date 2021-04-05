@@ -61,5 +61,10 @@ namespace Mini_games
 
             return true;
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
