@@ -29,7 +29,7 @@ namespace Mini_games
             if (IsUserFormValid())
             {
                 this.Hide();
-                MainForm mainForm = new MainForm(this.ActiveUserLoginForm);
+                MenuForm mainForm = new MenuForm(this.ActiveUserLoginForm);
                 mainForm.Show();
             }
         }
