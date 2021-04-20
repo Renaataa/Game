@@ -16,6 +16,7 @@ namespace Mini_games.allGames
         int jumpSpeed = 10;
         int force = 12;
         int score = 0;
+        public int Score = 0;
         int obstacleSpeed = 10;
         Random rnd = new Random();
 
@@ -29,6 +30,7 @@ namespace Mini_games.allGames
         {
             trex.Top += jumpSpeed;
             scoreText.Text = "Score: " + score;
+            Score = score;
 
             if (jumping && force < 0)
                 jumping = false;
@@ -93,8 +95,6 @@ namespace Mini_games.allGames
 
         private void resetGame()
         {
-
-
             force = 12;
             trex.Top = floor.Top - trex.Height;
             jumpSpeed = 0;
@@ -116,5 +116,9 @@ namespace Mini_games.allGames
             gameTimer.Start();
         }
 
+        private void UserControlDino_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

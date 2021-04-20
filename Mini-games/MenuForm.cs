@@ -22,6 +22,7 @@ namespace Mini_games
             InitializeComponent();
             this.ActiveUserMainForm = user;
             LoadActiveUser();
+            UpdateScore();
         }
 
         private void buttonDino_Click(object sender, EventArgs e)
@@ -41,6 +42,7 @@ namespace Mini_games
             if (!dino.Visible)
             {
                 panelMenu.Show();
+                UpdateScore();
                 this.Text = "Games";
             }
         }
@@ -80,6 +82,28 @@ namespace Mini_games
             {
                 textBoxNickname.Text = ActiveUserMainForm.Nickname.ToString();
                 textBoxPassword.Text = ActiveUserMainForm.Password.ToString();
+            }
+        }
+
+        private void UpdateScore()
+        {
+            int newScore = dino.Score;
+
+            if (ActiveUserMainForm != null)
+            {
+                foreach (Result result in DatabeseDC.Results)
+                {
+                    if (result.UserID == ActiveUserMainForm.Id && result.GameID == 3)
+                    {
+                        if (newScore > result.Result1)
+                        {
+                            result.Result1 = newScore;
+                            DatabeseDC.SubmitChanges();
+                        }
+                        labelScore.Text = result.Result1.ToString();
+                        break;
+                    }
+                }
             }
         }
     }
