@@ -16,6 +16,7 @@ namespace Mini_games
         DatabaseUsersDataContext DatabeseDC = new DatabaseUsersDataContext();
         User ActiveUserMainForm = new User();
         allGames.UserControlDino dino = new allGames.UserControlDino();
+        allGames.FlappyBirdGame fbird = new allGames.FlappyBirdGame();
 
         public MenuForm(User user)
         {
@@ -88,12 +89,16 @@ namespace Mini_games
         private void UpdateScore()
         {
             int newScore = dino.Score;
+            int newScore2 = fbird.score;
 
             if (ActiveUserMainForm != null)
             {
+                //Game g = DatabeseDC.Games.Single(g => g.Id == 3);
+                //ActiveUserMainForm.Results.Single(r => r.Game == g).Result1 
+
                 foreach (Result result in DatabeseDC.Results)
                 {
-                    if (result.UserID == ActiveUserMainForm.Id && result.GameID == 3)
+                    if (result.User == ActiveUserMainForm && result.GameID == 3)
                     {
                         if (newScore > result.Result1)
                         {
@@ -105,6 +110,17 @@ namespace Mini_games
                     }
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelMenu.Hide();
+
+            fbird.AutoScroll = false;
+            panelGame.Controls.Add(fbird);
+            fbird.Show();
+
+            this.Text = "FlappyBird";
         }
     }
 }

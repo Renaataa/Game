@@ -33,3 +33,16 @@ C:\Users\mar31\source\Log\Mini-games\obj\Debug\Mini_games.allGames.UserControlDi
 C:\Users\mar31\source\Log\Mini-games\obj\Debug\Mini_games.MenuForm.resources
 D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.allGames.UserControlDino.resources
 D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.MenuForm.resources
+C:\Users\Дмитрий\source\repos\Game\Mini-games\bin\Debug\Mini-games.exe.config
+C:\Users\Дмитрий\source\repos\Game\Mini-games\bin\Debug\Mini-games.exe
+C:\Users\Дмитрий\source\repos\Game\Mini-games\bin\Debug\Mini-games.pdb
+C:\Users\Дмитрий\source\repos\Game\Mini-games\obj\Debug\Mini-games.csprojAssemblyReference.cache
+C:\Users\Дмитрий\source\repos\Game\Mini-games\obj\Debug\Mini_games.allGames.UserControlDino.resources
+C:\Users\Дмитрий\source\repos\Game\Mini-games\obj\Debug\Mini_games.MenuForm.resources
+C:\Users\Дмитрий\source\repos\Game\Mini-games\obj\Debug\Mini_games.RegisterForm.resources
+C:\Users\Дмитрий\source\repos\Game\Mini-games\obj\Debug\Mini_games.LoginForm.resources
+C:\Users\Дмитрий\source\repos\Game\Mini-games\obj\Debug\Mini_games.Properties.Resources.resources
+C:\Users\Дмитрий\source\repos\Game\Mini-games\obj\Debug\Mini-games.csproj.GenerateResource.cache
+C:\Users\Дмитрий\source\repos\Game\Mini-games\obj\Debug\Mini-games.csproj.CoreCompileInputs.cache
+C:\Users\Дмитрий\source\repos\Game\Mini-games\obj\Debug\Mini-games.exe
+C:\Users\Дмитрий\source\repos\Game\Mini-games\obj\Debug\Mini-games.pdb

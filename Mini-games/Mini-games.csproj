@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="allGames\FlappyBirdGame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="allGames\FlappyBirdGame.Designer.cs">
+      <DependentUpon>FlappyBirdGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="allGames\UserControlDino.cs">
       <SubType>UserControl</SubType>
     </Compile>
