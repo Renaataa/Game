@@ -68,11 +68,11 @@
     <Compile Include="allGames\FlappyBirdGame.Designer.cs">
       <DependentUpon>FlappyBirdGame.cs</DependentUpon>
     </Compile>
-    <Compile Include="allGames\UserControlDino.cs">
+    <Compile Include="allGames\DinoChromeGame.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="allGames\UserControlDino.designer.cs">
-      <DependentUpon>UserControlDino.cs</DependentUpon>
+    <Compile Include="allGames\DinoChromeGame.designer.cs">
+      <DependentUpon>DinoChromeGame.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseUsers.designer.cs">
       <AutoGen>True</AutoGen>
@@ -104,8 +104,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="allGames\UserControlDino.resx">
-      <DependentUpon>UserControlDino.cs</DependentUpon>
+    <EmbeddedResource Include="allGames\DinoChromeGame.resx">
+      <DependentUpon>DinoChromeGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>

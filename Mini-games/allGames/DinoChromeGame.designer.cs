@@ -1,7 +1,7 @@
 ﻿
 namespace Mini_games.allGames
 {
-    partial class UserControlDino
+    partial class DinoChromeGame
     {
         /// <summary> 
         /// Required designer variable.

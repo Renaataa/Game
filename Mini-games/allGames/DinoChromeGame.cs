@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Mini_games.allGames
 {
-    public partial class UserControlDino : UserControl
+    public partial class DinoChromeGame : UserControl
     {
         bool jumping = false;
         int jumpSpeed = 10;
@@ -20,7 +20,7 @@ namespace Mini_games.allGames
         int obstacleSpeed = 10;
         Random rnd = new Random();
 
-        public UserControlDino()
+        public DinoChromeGame()
         {
             InitializeComponent();
             resetGame();

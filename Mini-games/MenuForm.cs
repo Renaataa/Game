@@ -15,7 +15,7 @@ namespace Mini_games
     {
         DatabaseUsersDataContext DatabeseDC = new DatabaseUsersDataContext();
         User ActiveUserMainForm = new User();
-        allGames.UserControlDino dino = new allGames.UserControlDino();
+        allGames.DinoChromeGame dino = new allGames.DinoChromeGame();
         allGames.FlappyBirdGame fbird = new allGames.FlappyBirdGame();
 
         public MenuForm(User user)
@@ -30,23 +30,29 @@ namespace Mini_games
         {
             panelMenu.Hide();
 
-            dino.AutoScroll = false;
             panelGame.Controls.Add(dino);
-            dino.Show();
+            panelGame.Controls.Add(buttonGameExit);
 
             this.Text = "DinoChrome";
 
         }
 
-        private void panelGame_Paint(object sender, PaintEventArgs e)
+        private void buttonFB_Click(object sender, EventArgs e)
         {
-            if (!dino.Visible)
-            {
-                panelMenu.Show();
-                UpdateScore();
-                this.Text = "Games";
-            }
+            panelMenu.Hide();
+
+            panelGame.Controls.Add(fbird);
+            panelGame.Controls.Add(buttonGameExit);
+
+            this.Text = "FlappyBird";
         }
+
+        private void buttonGameExit_Click(object sender, EventArgs e)
+        {
+            panelGame.Controls.Clear();
+            panelMenu.Show();
+        }
+
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
@@ -112,15 +118,5 @@ namespace Mini_games
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            panelMenu.Hide();
-
-            fbird.AutoScroll = false;
-            panelGame.Controls.Add(fbird);
-            fbird.Show();
-
-            this.Text = "FlappyBird";
-        }
     }
 }
