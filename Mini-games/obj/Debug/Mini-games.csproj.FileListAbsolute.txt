@@ -31,7 +31,6 @@ C:\Users\mar31\source\Log\Mini-games\obj\Debug\Mini-games.exe
 C:\Users\mar31\source\Log\Mini-games\obj\Debug\Mini-games.pdb
 C:\Users\mar31\source\Log\Mini-games\obj\Debug\Mini_games.allGames.UserControlDino.resources
 C:\Users\mar31\source\Log\Mini-games\obj\Debug\Mini_games.MenuForm.resources
-D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.allGames.UserControlDino.resources
 D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.MenuForm.resources
 C:\Users\Дмитрий\source\repos\Game\Mini-games\bin\Debug\Mini-games.exe.config
 C:\Users\Дмитрий\source\repos\Game\Mini-games\bin\Debug\Mini-games.exe
@@ -59,3 +58,5 @@ C:\Users\mar31\source\Game\Mini-games\obj\Debug\Mini-games.csproj.GenerateResour
 C:\Users\mar31\source\Game\Mini-games\obj\Debug\Mini-games.csproj.CoreCompileInputs.cache
 C:\Users\mar31\source\Game\Mini-games\obj\Debug\Mini-games.exe
 C:\Users\mar31\source\Game\Mini-games\obj\Debug\Mini-games.pdb
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.allGames.DinoChromeGame.resources
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.allGames.FlappyBirdGame.resources

@@ -16,6 +16,7 @@ namespace Mini_games.allGames
         {
             InitializeComponent();
         }
+        public static int Id = 2;
         int diff = 0;
         int speed = 0;
         int gravity = 1;
@@ -152,6 +153,11 @@ namespace Mini_games.allGames
             pipeTopGen();
             pipeGen();
             timer1.Start();
+        }
+
+        private void FlappyBirdGame_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

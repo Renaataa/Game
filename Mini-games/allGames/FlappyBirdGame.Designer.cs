@@ -71,7 +71,7 @@ namespace Mini_games.allGames
             this.labelScore.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelScore.Location = new System.Drawing.Point(28, 37);
             this.labelScore.Name = "labelScore";
-            this.labelScore.Size = new System.Drawing.Size(101, 24);
+            this.labelScore.Size = new System.Drawing.Size(148, 36);
             this.labelScore.TabIndex = 2;
             this.labelScore.Text = "Score: ";
             // 
@@ -83,6 +83,7 @@ namespace Mini_games.allGames
             this.Controls.Add(this.ground1);
             this.Name = "FlappyBirdGame";
             this.Size = new System.Drawing.Size(684, 461);
+            this.Load += new System.EventHandler(this.FlappyBirdGame_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyup);
             ((System.ComponentModel.ISupportInitialize)(this.bird)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ground1)).EndInit();

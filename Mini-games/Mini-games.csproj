@@ -107,6 +107,9 @@
     <EmbeddedResource Include="allGames\DinoChromeGame.resx">
       <DependentUpon>DinoChromeGame.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="allGames\FlappyBirdGame.resx">
+      <DependentUpon>FlappyBirdGame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>

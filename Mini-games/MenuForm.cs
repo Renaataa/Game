@@ -13,10 +13,11 @@ namespace Mini_games
 {
     public partial class MenuForm : Form
     {
-        DatabaseUsersDataContext DatabeseDC = new DatabaseUsersDataContext();
+        DatabaseUsersDataContext DatabaseDC = new DatabaseUsersDataContext();
         User ActiveUserMainForm = new User();
         allGames.DinoChromeGame dino = new allGames.DinoChromeGame();
         allGames.FlappyBirdGame fbird = new allGames.FlappyBirdGame();
+        int gameId = 0;
 
         public MenuForm(User user)
         {
@@ -29,28 +30,34 @@ namespace Mini_games
         private void buttonDino_Click(object sender, EventArgs e)
         {
             panelMenu.Hide();
-
+            
             panelGame.Controls.Add(dino);
             panelGame.Controls.Add(buttonGameExit);
 
             this.Text = "DinoChrome";
 
+            Game game = DatabaseDC.Games.Single(name => name.Name == "DinoChrome");
+            gameId = game.Id;
         }
 
         private void buttonFB_Click(object sender, EventArgs e)
         {
             panelMenu.Hide();
-
+            
             panelGame.Controls.Add(fbird);
             panelGame.Controls.Add(buttonGameExit);
 
             this.Text = "FlappyBird";
+
+            Game game = DatabaseDC.Games.Single(name => name.Name == "FlappyBird");
+            gameId = game.Id;
         }
 
         private void buttonGameExit_Click(object sender, EventArgs e)
         {
             panelGame.Controls.Clear();
             panelMenu.Show();
+            UpdateScore();
         }
 
 
@@ -92,31 +99,48 @@ namespace Mini_games
             }
         }
 
-        private void UpdateScore()
+        public void UpdateScore()
         {
-            int newScore = dino.Score;
-            int newScore2 = fbird.score;
-
             if (ActiveUserMainForm != null)
             {
-                //Game g = DatabeseDC.Games.Single(g => g.Id == 3);
-                //ActiveUserMainForm.Results.Single(r => r.Game == g).Result1 
-
-                foreach (Result result in DatabeseDC.Results)
+                if(gameId != 0)
                 {
-                    if (result.User == ActiveUserMainForm && result.GameID == 3)
+                    Result PreviousResult;
+                    int newDinoScore = dino.score;
+                    int newFBScore = fbird.score;
+
+                    PreviousResult = DatabaseDC.Results.Single(data => data.GameID == gameId && data.UserID == ActiveUserMainForm.Id);
+
+                    if (gameId == 1 && newDinoScore > PreviousResult.Result1)
                     {
-                        if (newScore > result.Result1)
-                        {
-                            result.Result1 = newScore;
-                            DatabeseDC.SubmitChanges();
-                        }
-                        labelScore.Text = result.Result1.ToString();
-                        break;
+                        PreviousResult.Result1 = newDinoScore;
+                        labelDinoScore.Text = PreviousResult.Result1.ToString();
+                    }
+
+                    if (gameId == 2 && newFBScore > PreviousResult.Result1)
+                    {
+                        PreviousResult.Result1 = newFBScore;
+                        labelFBScore.Text = PreviousResult.Result1.ToString();
+                    }
+                    DatabaseDC.SubmitChanges();
+                }
+                else
+                {
+                    Result CurrentResult;
+                    int gameCount = DatabaseDC.Games.Count();
+                    for (int i = 0; i < gameCount; i++)
+                    {
+                        CurrentResult = DatabaseDC.Results.Single(data => data.GameID == i+1 && data.UserID == ActiveUserMainForm.Id);
+                        if (i == 0) labelDinoScore.Text = CurrentResult.Result1.ToString();
+                        if (i == 1) labelFBScore.Text = CurrentResult.Result1.ToString();
                     }
                 }
             }
         }
 
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -15,8 +15,7 @@ namespace Mini_games.allGames
         bool jumping = false;
         int jumpSpeed = 10;
         int force = 12;
-        int score = 0;
-        public int Score = 0;
+        public int score = 0;
         int obstacleSpeed = 10;
         Random rnd = new Random();
 
@@ -30,7 +29,6 @@ namespace Mini_games.allGames
         {
             trex.Top += jumpSpeed;
             scoreText.Text = "Score: " + score;
-            Score = score;
 
             if (jumping && force < 0)
                 jumping = false;
