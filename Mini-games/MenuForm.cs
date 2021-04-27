@@ -18,7 +18,7 @@ namespace Mini_games
         allGames.DinoChromeGame dino = new allGames.DinoChromeGame();
         allGames.FlappyBirdGame fbird = new allGames.FlappyBirdGame();
         AllResultsTable table = new AllResultsTable();
-        int gameId = 0;
+        Game currentGame;
 
         public MenuForm(User user)
         {
@@ -37,8 +37,7 @@ namespace Mini_games
 
             this.Text = "DinoChrome";
 
-            Game game = DatabaseDC.Games.Single(name => name.Name == "DinoChrome");
-            gameId = game.Id;
+            currentGame = DatabaseDC.Games.Single(name => name.Name == "DinoChrome");
         }
 
         private void buttonFB_Click(object sender, EventArgs e)
@@ -50,8 +49,7 @@ namespace Mini_games
 
             this.Text = "FlappyBird";
 
-            Game game = DatabaseDC.Games.Single(name => name.Name == "FlappyBird");
-            gameId = game.Id;
+            currentGame = DatabaseDC.Games.Single(name => name.Name == "FlappyBird");
         }
 
         private void buttonGameExit_Click(object sender, EventArgs e)
@@ -104,21 +102,21 @@ namespace Mini_games
         {
             if (ActiveUserMainForm != null)
             {
-                if(gameId != 0)
+                if(currentGame != null)
                 {
                     Result PreviousResult;
                     int newDinoScore = dino.score;
                     int newFBScore = fbird.score;
 
-                    PreviousResult = DatabaseDC.Results.Single(data => data.GameID == gameId && data.UserID == ActiveUserMainForm.Id);
+                    PreviousResult = DatabaseDC.Results.Single(data => data.GameID == currentGame.Id && data.UserID == ActiveUserMainForm.Id);
 
-                    if (gameId == 1 && newDinoScore > PreviousResult.Result1)
+                    if (currentGame.Id == 1 && newDinoScore > PreviousResult.Result1)
                     {
                         PreviousResult.Result1 = newDinoScore;
                         labelDinoScore.Text = PreviousResult.Result1.ToString();
                     }
 
-                    if (gameId == 2 && newFBScore > PreviousResult.Result1)
+                    if (currentGame.Id == 2 && newFBScore > PreviousResult.Result1)
                     {
                         PreviousResult.Result1 = newFBScore;
                         labelFBScore.Text = PreviousResult.Result1.ToString();

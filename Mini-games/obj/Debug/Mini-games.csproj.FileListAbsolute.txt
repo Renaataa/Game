@@ -75,3 +75,4 @@ C:\Users\mar31\source\Game2\Mini-games\obj\Debug\Mini-games.csproj.GenerateResou
 C:\Users\mar31\source\Game2\Mini-games\obj\Debug\Mini-games.csproj.CoreCompileInputs.cache
 C:\Users\mar31\source\Game2\Mini-games\obj\Debug\Mini-games.exe
 C:\Users\mar31\source\Game2\Mini-games\obj\Debug\Mini-games.pdb
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.AllResultsTable.resources

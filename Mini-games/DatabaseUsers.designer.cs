@@ -42,7 +42,7 @@ namespace Mini_games
     #endregion
 		
 		public DatabaseUsersDataContext() : 
-				base(global::Mini_games.Properties.Settings.Default.UsersConnectionString1, mappingSource)
+				base(global::Mini_games.Properties.Settings.Default.UsersConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
