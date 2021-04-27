@@ -17,6 +17,7 @@ namespace Mini_games
         User ActiveUserMainForm = new User();
         allGames.DinoChromeGame dino = new allGames.DinoChromeGame();
         allGames.FlappyBirdGame fbird = new allGames.FlappyBirdGame();
+        AllResultsTable table = new AllResultsTable();
         int gameId = 0;
 
         public MenuForm(User user)
@@ -141,6 +142,16 @@ namespace Mini_games
         private void MenuForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonResults_Click(object sender, EventArgs e)
+        {
+            panelMenu.Hide();
+
+            panelGame.Controls.Add(table);
+            panelGame.Controls.Add(buttonGameExit);
+
+            this.Text = "Results";
         }
     }
 }

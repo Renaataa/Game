@@ -74,6 +74,12 @@
     <Compile Include="allGames\DinoChromeGame.designer.cs">
       <DependentUpon>DinoChromeGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllResultsTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllResultsTable.designer.cs">
+      <DependentUpon>AllResultsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseUsers.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="allGames\FlappyBirdGame.resx">
       <DependentUpon>FlappyBirdGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllResultsTable.resx">
+      <DependentUpon>AllResultsTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
