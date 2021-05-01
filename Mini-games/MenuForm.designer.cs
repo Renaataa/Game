@@ -46,6 +46,9 @@ namespace Mini_games
             this.buttonExit = new System.Windows.Forms.Button();
             this.panelGame = new System.Windows.Forms.Panel();
             this.buttonGameExit = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labelPlatformScore = new System.Windows.Forms.Label();
+            this.buttonPlatform = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelGame.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +78,9 @@ namespace Mini_games
             // panelMenu
             // 
             this.panelMenu.AutoScroll = true;
+            this.panelMenu.Controls.Add(this.buttonPlatform);
+            this.panelMenu.Controls.Add(this.labelPlatformScore);
+            this.panelMenu.Controls.Add(this.label6);
             this.panelMenu.Controls.Add(this.buttonResults);
             this.panelMenu.Controls.Add(this.labelFBScore);
             this.panelMenu.Controls.Add(this.label4);
@@ -139,7 +145,7 @@ namespace Mini_games
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 126);
+            this.label5.Location = new System.Drawing.Point(6, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 20);
             this.label5.TabIndex = 19;
@@ -228,6 +234,36 @@ namespace Mini_games
             this.buttonGameExit.UseVisualStyleBackColor = true;
             this.buttonGameExit.Click += new System.EventHandler(this.buttonGameExit_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 269);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 20);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Score:";
+            // 
+            // labelPlatformScore
+            // 
+            this.labelPlatformScore.AutoSize = true;
+            this.labelPlatformScore.Location = new System.Drawing.Point(64, 269);
+            this.labelPlatformScore.Name = "labelPlatformScore";
+            this.labelPlatformScore.Size = new System.Drawing.Size(18, 20);
+            this.labelPlatformScore.TabIndex = 25;
+            this.labelPlatformScore.Text = "0";
+            // 
+            // buttonPlatform
+            // 
+            this.buttonPlatform.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonPlatform.Location = new System.Drawing.Point(230, 253);
+            this.buttonPlatform.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.buttonPlatform.Name = "buttonPlatform";
+            this.buttonPlatform.Size = new System.Drawing.Size(198, 49);
+            this.buttonPlatform.TabIndex = 26;
+            this.buttonPlatform.Text = "Platform";
+            this.buttonPlatform.UseVisualStyleBackColor = true;
+            this.buttonPlatform.Click += new System.EventHandler(this.buttonPlatform_Click);
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -269,5 +305,8 @@ namespace Mini_games
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonGameExit;
         private System.Windows.Forms.Button buttonResults;
+        private System.Windows.Forms.Button buttonPlatform;
+        private System.Windows.Forms.Label labelPlatformScore;
+        private System.Windows.Forms.Label label6;
     }
 }

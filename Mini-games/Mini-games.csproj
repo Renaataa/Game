@@ -74,6 +74,12 @@
     <Compile Include="allGames\DinoChromeGame.designer.cs">
       <DependentUpon>DinoChromeGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="allGames\PlatformGame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="allGames\PlatformGame.Designer.cs">
+      <DependentUpon>PlatformGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllResultsTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="allGames\FlappyBirdGame.resx">
       <DependentUpon>FlappyBirdGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="allGames\PlatformGame.resx">
+      <DependentUpon>PlatformGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllResultsTable.resx">
       <DependentUpon>AllResultsTable.cs</DependentUpon>

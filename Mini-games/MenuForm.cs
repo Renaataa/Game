@@ -17,6 +17,7 @@ namespace Mini_games
         User ActiveUserMainForm = new User();
         allGames.DinoChromeGame dino = new allGames.DinoChromeGame();
         allGames.FlappyBirdGame fbird = new allGames.FlappyBirdGame();
+        allGames.PlatformGame platform = new allGames.PlatformGame();
         AllResultsTable table = new AllResultsTable();
         Game currentGame;
 
@@ -26,6 +27,15 @@ namespace Mini_games
             this.ActiveUserMainForm = user;
             LoadActiveUser();
             UpdateScore();
+        }
+
+        private void LoadActiveUser()
+        {
+            if (ActiveUserMainForm != null)
+            {
+                textBoxNickname.Text = ActiveUserMainForm.Nickname.ToString();
+                textBoxPassword.Text = ActiveUserMainForm.Password.ToString();
+            }
         }
 
         private void buttonDino_Click(object sender, EventArgs e)
@@ -52,13 +62,32 @@ namespace Mini_games
             currentGame = DatabaseDC.Games.Single(name => name.Name == "FlappyBird");
         }
 
+        private void buttonPlatform_Click(object sender, EventArgs e)
+        {
+            panelMenu.Hide();
+
+            panelGame.Controls.Add(platform);
+            panelGame.Controls.Add(buttonGameExit);
+
+            this.Text = "Platform";
+        }
+
+        private void buttonResults_Click(object sender, EventArgs e)
+        {
+            panelMenu.Hide();
+
+            panelGame.Controls.Add(table);
+            panelGame.Controls.Add(buttonGameExit);
+
+            this.Text = "Results";
+        }
+
         private void buttonGameExit_Click(object sender, EventArgs e)
         {
             panelGame.Controls.Clear();
             panelMenu.Show();
             UpdateScore();
         }
-
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
@@ -87,15 +116,6 @@ namespace Mini_games
         private void Form2Closed_1(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void LoadActiveUser()
-        {
-            if (ActiveUserMainForm != null)
-            {
-                textBoxNickname.Text = ActiveUserMainForm.Nickname.ToString();
-                textBoxPassword.Text = ActiveUserMainForm.Password.ToString();
-            }
         }
 
         public void UpdateScore()
@@ -140,16 +160,6 @@ namespace Mini_games
         private void MenuForm_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void buttonResults_Click(object sender, EventArgs e)
-        {
-            panelMenu.Hide();
-
-            panelGame.Controls.Add(table);
-            panelGame.Controls.Add(buttonGameExit);
-
-            this.Text = "Results";
         }
     }
 }
