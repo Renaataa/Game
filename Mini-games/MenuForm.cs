@@ -18,6 +18,7 @@ namespace Mini_games
         allGames.DinoChromeGame dino = new allGames.DinoChromeGame();
         allGames.FlappyBirdGame fbird = new allGames.FlappyBirdGame();
         allGames.PlatformGame platform = new allGames.PlatformGame();
+        allGames.TanksGame tanks = new allGames.TanksGame();
         AllResultsTable table = new AllResultsTable();
         Game currentGame;
 
@@ -72,6 +73,18 @@ namespace Mini_games
             this.Text = "Platform";
         }
 
+        private void buttonTanks_Click(object sender, EventArgs e)
+        {
+            panelMenu.Hide();
+
+            panelGame.Controls.Add(tanks);
+            panelGame.Controls.Add(buttonGameExit);
+
+            this.Text = "Tanks";
+
+        //    currentGame = DatabaseDC.Games.Single(name => name.Name == "Tanks");
+        }
+
         private void buttonResults_Click(object sender, EventArgs e)
         {
             panelMenu.Hide();
@@ -80,13 +93,6 @@ namespace Mini_games
             panelGame.Controls.Add(buttonGameExit);
 
             this.Text = "Results";
-        }
-
-        private void buttonGameExit_Click(object sender, EventArgs e)
-        {
-            panelGame.Controls.Clear();
-            panelMenu.Show();
-            UpdateScore();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -127,6 +133,7 @@ namespace Mini_games
                     Result PreviousResult;
                     int newDinoScore = dino.score;
                     int newFBScore = fbird.score;
+                //    int newTanksScore = tanks.score;
 
                     PreviousResult = DatabaseDC.Results.Single(data => data.GameID == currentGame.Id && data.UserID == ActiveUserMainForm.Id);
 
@@ -141,6 +148,12 @@ namespace Mini_games
                         PreviousResult.Result1 = newFBScore;
                         labelFBScore.Text = PreviousResult.Result1.ToString();
                     }
+
+                //    if (currentGame.Id == 8 && newTanksScore > PreviousResult.Result1)
+                //    {
+                //        PreviousResult.Result1 = newTanksScore;
+                //        labelTanksScore.Text = PreviousResult.Result1.ToString();
+                //    }
                     DatabaseDC.SubmitChanges();
                 }
                 else
@@ -160,6 +173,16 @@ namespace Mini_games
         private void MenuForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void MenuForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                panelGame.Controls.Clear();
+                panelMenu.Show();
+                UpdateScore();
+            }
         }
     }
 }

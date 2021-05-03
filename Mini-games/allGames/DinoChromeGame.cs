@@ -41,6 +41,7 @@ namespace Mini_games.allGames
             else
                 jumpSpeed = 15;
 
+
             foreach (Control x in this.Controls)
             {
                 if (x is PictureBox && x.Tag == "obstacle")
@@ -57,7 +58,7 @@ namespace Mini_games.allGames
                     {
                         gameTimer.Stop();
                         trex.Image = Properties.Resources.trex_dead;
-                        scoreText.Text += "  Press R to start OR press E to exit";
+                        scoreText.Text += "  Press R to start OR press Esc to exit";
                     }
                 }
             }
@@ -83,9 +84,6 @@ namespace Mini_games.allGames
         {
             if (e.KeyCode == Keys.R)
                 resetGame();
-
-            if (e.KeyCode == Keys.E)
-                this.Visible = false;
 
             if (jumping)
                 jumping = false;

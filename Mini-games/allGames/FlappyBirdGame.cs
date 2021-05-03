@@ -65,7 +65,7 @@ namespace Mini_games.allGames
         private void endGame()
         {
             timer1.Stop();
-            labelScore.Text += " Game over! Press R to restart";
+            labelScore.Text += " Game over! Press R to start OR press Esc to exit";
         }
 
         private void keyup(object sender, KeyEventArgs e)

@@ -80,6 +80,12 @@
     <Compile Include="allGames\PlatformGame.Designer.cs">
       <DependentUpon>PlatformGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="allGames\TanksGame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="allGames\TanksGame.designer.cs">
+      <DependentUpon>TanksGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllResultsTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="allGames\PlatformGame.resx">
       <DependentUpon>PlatformGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="allGames\TanksGame.resx">
+      <DependentUpon>TanksGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllResultsTable.resx">
       <DependentUpon>AllResultsTable.cs</DependentUpon>
@@ -183,6 +192,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\trex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\block-min.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank_bad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
