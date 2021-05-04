@@ -1,12 +1,12 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Mini_games
 {
     public partial class RegisterForm : Form
     {
-        DatabaseUsersDataContext DatabeseDC = new DatabaseUsersDataContext();
-        int countOfGames = 6;
+        DatabaseUsersDataContext DatabaseDC = new DatabaseUsersDataContext();
 
         public RegisterForm()
         {
@@ -23,21 +23,22 @@ namespace Mini_games
             if (IsUserFormValid())
             {
                 User newUser = new User();
+                int countOfGames = DatabaseDC.Games.Count();
                 newUser.Nickname = textBoxNickname.Text;
                 newUser.Password = textBoxPassword.Text;
 
-                DatabeseDC.Users.InsertOnSubmit(newUser);
-                DatabeseDC.SubmitChanges();
+                DatabaseDC.Users.InsertOnSubmit(newUser);
+                DatabaseDC.SubmitChanges();
 
                 for (int i = 0; i < countOfGames; i++)
                 {
                     Result newResult = new Result();
                     newResult.GameID = i + 1;
                     newResult.UserID = newUser.Id;
-                    DatabeseDC.Results.InsertOnSubmit(newResult);
+                    DatabaseDC.Results.InsertOnSubmit(newResult);
                 }
 
-                DatabeseDC.SubmitChanges();
+                DatabaseDC.SubmitChanges();
 
                 MessageBox.Show("Your account was created.");
 
@@ -58,7 +59,7 @@ namespace Mini_games
                 MessageBox.Show("Password can't be empty.");
                 return false;
             }
-            foreach(User user in DatabeseDC.Users)
+            foreach(User user in DatabaseDC.Users)
             {
                 if (user.Nickname == textBoxNickname.Text)
                 {
@@ -70,16 +71,16 @@ namespace Mini_games
             return true;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void logInLabel_Click(object sender, EventArgs e)
         {
             this.Hide();
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

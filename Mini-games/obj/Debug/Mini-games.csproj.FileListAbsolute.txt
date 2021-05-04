@@ -99,3 +99,5 @@ C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini-gam
 C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini-games.exe
 C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini-games.pdb
 C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini_games.allGames.PlaneGame.resources
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.allGames.PlaneGame.resources
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.allGames.TanksGame.resources

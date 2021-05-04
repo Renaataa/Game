@@ -28,7 +28,7 @@ namespace Mini_games
             InitializeComponent();
             this.ActiveUserMainForm = user;
             LoadActiveUser();
-            //UpdateScore();
+            UpdateScore();
         }
 
         private void LoadActiveUser()
@@ -83,7 +83,19 @@ namespace Mini_games
 
             this.Text = "Tanks";
 
-        //    currentGame = DatabaseDC.Games.Single(name => name.Name == "Tanks");
+            currentGame = DatabaseDC.Games.Single(name => name.Name == "Tanks");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelMenu.Hide();
+
+            panelGame.Controls.Add(plane);
+            panelGame.Controls.Add(buttonGameExit);
+
+            this.Text = "Plane";
+
+            currentGame = DatabaseDC.Games.Single(name => name.Name == "Plane");
         }
 
         private void buttonResults_Click(object sender, EventArgs e)
@@ -134,7 +146,8 @@ namespace Mini_games
                     Result PreviousResult;
                     int newDinoScore = dino.score;
                     int newFBScore = fbird.score;
-                //    int newTanksScore = tanks.score;
+                    int newTanksScore = tanks.score;
+                    int newPlaneScore = plane.score;
 
                     PreviousResult = DatabaseDC.Results.Single(data => data.GameID == currentGame.Id && data.UserID == ActiveUserMainForm.Id);
 
@@ -150,11 +163,18 @@ namespace Mini_games
                         labelFBScore.Text = PreviousResult.Result1.ToString();
                     }
 
-                //    if (currentGame.Id == 8 && newTanksScore > PreviousResult.Result1)
-                //    {
-                //        PreviousResult.Result1 = newTanksScore;
-                //        labelTanksScore.Text = PreviousResult.Result1.ToString();
-                //    }
+                    if (currentGame.Id == 3 && newTanksScore > PreviousResult.Result1)
+                    {
+                        PreviousResult.Result1 = newTanksScore;
+                        labelTanksScore.Text = PreviousResult.Result1.ToString();
+                    }
+
+                    if (currentGame.Id == 4 && newPlaneScore > PreviousResult.Result1)
+                    {
+                        PreviousResult.Result1 = newPlaneScore;
+                        labelPlaneScore.Text = PreviousResult.Result1.ToString();
+                    }
+
                     DatabaseDC.SubmitChanges();
                 }
                 else
@@ -166,14 +186,11 @@ namespace Mini_games
                         CurrentResult = DatabaseDC.Results.Single(data => data.GameID == i+1 && data.UserID == ActiveUserMainForm.Id);
                         if (i == 0) labelDinoScore.Text = CurrentResult.Result1.ToString();
                         if (i == 1) labelFBScore.Text = CurrentResult.Result1.ToString();
+                        if (i == 2) labelTanksScore.Text = CurrentResult.Result1.ToString();
+                        if (i == 3) labelPlaneScore.Text = CurrentResult.Result1.ToString();
                     }
                 }
             }
-        }
-
-        private void MenuForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void MenuForm_KeyUp(object sender, KeyEventArgs e)
@@ -182,18 +199,13 @@ namespace Mini_games
             {
                 panelGame.Controls.Clear();
                 panelMenu.Show();
-                //UpdateScore();
+                UpdateScore();
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void MenuForm_Load(object sender, EventArgs e)
         {
-            panelMenu.Hide();
 
-            panelGame.Controls.Add(plane);
-            panelGame.Controls.Add(buttonGameExit);
-
-            this.Text = "Plane";
         }
     }
 }

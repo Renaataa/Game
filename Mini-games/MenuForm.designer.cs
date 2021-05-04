@@ -32,6 +32,9 @@ namespace Mini_games
             this.label = new System.Windows.Forms.Label();
             this.buttonDino = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.labelPlaneScore = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.buttonPlane = new System.Windows.Forms.Button();
             this.buttonTanks = new System.Windows.Forms.Button();
             this.labelTanksScore = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -52,9 +55,6 @@ namespace Mini_games
             this.buttonExit = new System.Windows.Forms.Button();
             this.panelGame = new System.Windows.Forms.Panel();
             this.buttonGameExit = new System.Windows.Forms.Button();
-            this.buttonPlane = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelGame.SuspendLayout();
             this.SuspendLayout();
@@ -63,20 +63,19 @@ namespace Mini_games
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label.Location = new System.Drawing.Point(2, 43);
-            this.label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label.Location = new System.Drawing.Point(3, 66);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(166, 26);
+            this.label.Size = new System.Drawing.Size(247, 38);
             this.label.TabIndex = 0;
             this.label.Text = "Choose a game";
             // 
             // buttonDino
             // 
             this.buttonDino.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDino.Location = new System.Drawing.Point(153, 71);
-            this.buttonDino.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonDino.Location = new System.Drawing.Point(230, 109);
+            this.buttonDino.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.buttonDino.Name = "buttonDino";
-            this.buttonDino.Size = new System.Drawing.Size(132, 32);
+            this.buttonDino.Size = new System.Drawing.Size(198, 49);
             this.buttonDino.TabIndex = 1;
             this.buttonDino.Text = "DinoChrom";
             this.buttonDino.UseVisualStyleBackColor = true;
@@ -85,7 +84,7 @@ namespace Mini_games
             // panelMenu
             // 
             this.panelMenu.AutoScroll = true;
-            this.panelMenu.Controls.Add(this.label7);
+            this.panelMenu.Controls.Add(this.labelPlaneScore);
             this.panelMenu.Controls.Add(this.label9);
             this.panelMenu.Controls.Add(this.buttonPlane);
             this.panelMenu.Controls.Add(this.buttonTanks);
@@ -108,19 +107,50 @@ namespace Mini_games
             this.panelMenu.Controls.Add(this.buttonExit);
             this.panelMenu.Controls.Add(this.label);
             this.panelMenu.Controls.Add(this.buttonDino);
-            this.panelMenu.Location = new System.Drawing.Point(9, 10);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panelMenu.Location = new System.Drawing.Point(14, 15);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(631, 292);
+            this.panelMenu.Size = new System.Drawing.Size(946, 449);
             this.panelMenu.TabIndex = 2;
+            // 
+            // labelPlaneScore
+            // 
+            this.labelPlaneScore.AutoSize = true;
+            this.labelPlaneScore.Location = new System.Drawing.Point(64, 412);
+            this.labelPlaneScore.Name = "labelPlaneScore";
+            this.labelPlaneScore.Size = new System.Drawing.Size(18, 20);
+            this.labelPlaneScore.TabIndex = 32;
+            this.labelPlaneScore.Text = "0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 412);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 20);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Score:";
+            // 
+            // buttonPlane
+            // 
+            this.buttonPlane.AutoSize = true;
+            this.buttonPlane.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonPlane.Location = new System.Drawing.Point(230, 400);
+            this.buttonPlane.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.buttonPlane.Name = "buttonPlane";
+            this.buttonPlane.Size = new System.Drawing.Size(198, 54);
+            this.buttonPlane.TabIndex = 30;
+            this.buttonPlane.Text = "Plane";
+            this.buttonPlane.UseVisualStyleBackColor = true;
+            this.buttonPlane.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonTanks
             // 
             this.buttonTanks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonTanks.Location = new System.Drawing.Point(153, 211);
-            this.buttonTanks.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonTanks.Location = new System.Drawing.Point(230, 325);
+            this.buttonTanks.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.buttonTanks.Name = "buttonTanks";
-            this.buttonTanks.Size = new System.Drawing.Size(132, 32);
+            this.buttonTanks.Size = new System.Drawing.Size(198, 49);
             this.buttonTanks.TabIndex = 29;
             this.buttonTanks.Text = "Tanks";
             this.buttonTanks.UseVisualStyleBackColor = true;
@@ -129,30 +159,28 @@ namespace Mini_games
             // labelTanksScore
             // 
             this.labelTanksScore.AutoSize = true;
-            this.labelTanksScore.Location = new System.Drawing.Point(43, 222);
-            this.labelTanksScore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTanksScore.Location = new System.Drawing.Point(64, 342);
             this.labelTanksScore.Name = "labelTanksScore";
-            this.labelTanksScore.Size = new System.Drawing.Size(13, 13);
+            this.labelTanksScore.Size = new System.Drawing.Size(18, 20);
             this.labelTanksScore.TabIndex = 28;
             this.labelTanksScore.Text = "0";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(4, 222);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(6, 342);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 13);
+            this.label8.Size = new System.Drawing.Size(55, 20);
             this.label8.TabIndex = 27;
             this.label8.Text = "Score:";
             // 
             // buttonPlatform
             // 
             this.buttonPlatform.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonPlatform.Location = new System.Drawing.Point(153, 164);
-            this.buttonPlatform.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonPlatform.Location = new System.Drawing.Point(230, 252);
+            this.buttonPlatform.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.buttonPlatform.Name = "buttonPlatform";
-            this.buttonPlatform.Size = new System.Drawing.Size(132, 32);
+            this.buttonPlatform.Size = new System.Drawing.Size(198, 49);
             this.buttonPlatform.TabIndex = 26;
             this.buttonPlatform.Text = "Platform";
             this.buttonPlatform.UseVisualStyleBackColor = true;
@@ -161,29 +189,26 @@ namespace Mini_games
             // labelPlatformScore
             // 
             this.labelPlatformScore.AutoSize = true;
-            this.labelPlatformScore.Location = new System.Drawing.Point(43, 175);
-            this.labelPlatformScore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelPlatformScore.Location = new System.Drawing.Point(64, 269);
             this.labelPlatformScore.Name = "labelPlatformScore";
-            this.labelPlatformScore.Size = new System.Drawing.Size(13, 13);
+            this.labelPlatformScore.Size = new System.Drawing.Size(18, 20);
             this.labelPlatformScore.TabIndex = 25;
             this.labelPlatformScore.Text = "0";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(4, 175);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(6, 269);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.Size = new System.Drawing.Size(55, 20);
             this.label6.TabIndex = 24;
             this.label6.Text = "Score:";
             // 
             // buttonResults
             // 
-            this.buttonResults.Location = new System.Drawing.Point(490, 259);
-            this.buttonResults.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonResults.Location = new System.Drawing.Point(735, 398);
             this.buttonResults.Name = "buttonResults";
-            this.buttonResults.Size = new System.Drawing.Size(67, 30);
+            this.buttonResults.Size = new System.Drawing.Size(100, 46);
             this.buttonResults.TabIndex = 23;
             this.buttonResults.Text = "Results";
             this.buttonResults.UseVisualStyleBackColor = true;
@@ -192,30 +217,28 @@ namespace Mini_games
             // labelFBScore
             // 
             this.labelFBScore.AutoSize = true;
-            this.labelFBScore.Location = new System.Drawing.Point(43, 129);
-            this.labelFBScore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFBScore.Location = new System.Drawing.Point(64, 198);
             this.labelFBScore.Name = "labelFBScore";
-            this.labelFBScore.Size = new System.Drawing.Size(13, 13);
+            this.labelFBScore.Size = new System.Drawing.Size(18, 20);
             this.labelFBScore.TabIndex = 22;
             this.labelFBScore.Text = "0";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 129);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(6, 198);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 21;
             this.label4.Text = "Score:";
             // 
             // buttonFB
             // 
             this.buttonFB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonFB.Location = new System.Drawing.Point(153, 118);
-            this.buttonFB.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonFB.Location = new System.Drawing.Point(230, 182);
+            this.buttonFB.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.buttonFB.Name = "buttonFB";
-            this.buttonFB.Size = new System.Drawing.Size(132, 32);
+            this.buttonFB.Size = new System.Drawing.Size(198, 49);
             this.buttonFB.TabIndex = 20;
             this.buttonFB.Text = "FlappyBird";
             this.buttonFB.UseVisualStyleBackColor = true;
@@ -224,75 +247,70 @@ namespace Mini_games
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 82);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(6, 126);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.Size = new System.Drawing.Size(55, 20);
             this.label5.TabIndex = 19;
             this.label5.Text = "Score:";
             // 
             // labelDinoScore
             // 
             this.labelDinoScore.AutoSize = true;
-            this.labelDinoScore.Location = new System.Drawing.Point(43, 82);
-            this.labelDinoScore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelDinoScore.Location = new System.Drawing.Point(64, 126);
             this.labelDinoScore.Name = "labelDinoScore";
-            this.labelDinoScore.Size = new System.Drawing.Size(13, 13);
+            this.labelDinoScore.Size = new System.Drawing.Size(18, 20);
             this.labelDinoScore.TabIndex = 18;
             this.labelDinoScore.Text = "0";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(430, 3);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(645, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.Size = new System.Drawing.Size(91, 20);
             this.label3.TabIndex = 17;
             this.label3.Text = "Active user:";
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(487, 51);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.textBoxPassword.Location = new System.Drawing.Point(730, 78);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(137, 22);
+            this.textBoxPassword.Size = new System.Drawing.Size(204, 26);
             this.textBoxPassword.TabIndex = 16;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(430, 51);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(645, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 15;
             this.label2.Text = "Password";
             // 
             // textBoxNickname
             // 
-            this.textBoxNickname.Location = new System.Drawing.Point(487, 23);
-            this.textBoxNickname.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.textBoxNickname.Location = new System.Drawing.Point(730, 35);
+            this.textBoxNickname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNickname.Name = "textBoxNickname";
-            this.textBoxNickname.Size = new System.Drawing.Size(137, 22);
+            this.textBoxNickname.Size = new System.Drawing.Size(204, 26);
             this.textBoxNickname.TabIndex = 14;
             // 
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(430, 25);
-            this.Label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label1.Location = new System.Drawing.Point(645, 38);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(57, 13);
+            this.Label1.Size = new System.Drawing.Size(79, 20);
             this.Label1.TabIndex = 13;
             this.Label1.Text = "Nickname";
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(561, 259);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonExit.Location = new System.Drawing.Point(842, 398);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(67, 32);
+            this.buttonExit.Size = new System.Drawing.Size(100, 49);
             this.buttonExit.TabIndex = 2;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = true;
@@ -301,65 +319,31 @@ namespace Mini_games
             // panelGame
             // 
             this.panelGame.Controls.Add(this.buttonGameExit);
-            this.panelGame.Location = new System.Drawing.Point(9, 12);
-            this.panelGame.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panelGame.Location = new System.Drawing.Point(14, 18);
+            this.panelGame.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panelGame.Name = "panelGame";
-            this.panelGame.Size = new System.Drawing.Size(631, 557);
+            this.panelGame.Size = new System.Drawing.Size(946, 857);
             this.panelGame.TabIndex = 3;
             // 
             // buttonGameExit
             // 
-            this.buttonGameExit.Location = new System.Drawing.Point(561, 524);
-            this.buttonGameExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonGameExit.Location = new System.Drawing.Point(842, 806);
             this.buttonGameExit.Name = "buttonGameExit";
-            this.buttonGameExit.Size = new System.Drawing.Size(67, 30);
+            this.buttonGameExit.Size = new System.Drawing.Size(100, 46);
             this.buttonGameExit.TabIndex = 0;
             this.buttonGameExit.Text = "Exit";
             this.buttonGameExit.UseVisualStyleBackColor = true;
             this.buttonGameExit.Visible = false;
             // 
-            // buttonPlane
-            // 
-            this.buttonPlane.AutoSize = true;
-            this.buttonPlane.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonPlane.Location = new System.Drawing.Point(153, 260);
-            this.buttonPlane.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.buttonPlane.Name = "buttonPlane";
-            this.buttonPlane.Size = new System.Drawing.Size(132, 32);
-            this.buttonPlane.TabIndex = 30;
-            this.buttonPlane.Text = "Plane";
-            this.buttonPlane.UseVisualStyleBackColor = true;
-            this.buttonPlane.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(43, 268);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(13, 13);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "0";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(4, 268);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 13);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "Score:";
-            // 
             // MenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 579);
+            this.ClientSize = new System.Drawing.Size(969, 891);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelGame);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "MenuForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -399,7 +383,7 @@ namespace Mini_games
         private System.Windows.Forms.Button buttonTanks;
         private System.Windows.Forms.Label labelTanksScore;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelPlaneScore;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button buttonPlane;
     }

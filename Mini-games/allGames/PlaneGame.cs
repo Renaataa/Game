@@ -14,12 +14,15 @@ namespace Mini_games.allGames
     {
         bool up, down, left, right;
         Random rnd = new Random();
-        int score = 0, fly = 0;
+        public int score = 0;
+        int fly = 0;
         MouseEventArgs me;
+
         public PlaneGame()
         {
             InitializeComponent();
         }
+
         private void tick(object sender, EventArgs e)
         {
             //pictureBox12.Top = MousePosition.Y;
@@ -128,6 +131,10 @@ namespace Mini_games.allGames
             }
             fly++;
         }
-    }
 
+        private void PlaneGame_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
