@@ -103,6 +103,12 @@
     <Compile Include="MenuForm.designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="allGames\PlaneGame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="allGames\PlaneGame.Designer.cs">
+      <DependentUpon>PlaneGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="allGames\FlappyBirdGame.resx">
       <DependentUpon>FlappyBirdGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="allGames\PlaneGame.resx">
+      <DependentUpon>PlaneGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="allGames\PlatformGame.resx">
       <DependentUpon>PlatformGame.cs</DependentUpon>

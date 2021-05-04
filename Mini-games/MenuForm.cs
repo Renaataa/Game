@@ -19,6 +19,7 @@ namespace Mini_games
         allGames.FlappyBirdGame fbird = new allGames.FlappyBirdGame();
         allGames.PlatformGame platform = new allGames.PlatformGame();
         allGames.TanksGame tanks = new allGames.TanksGame();
+        allGames.PlaneGame plane = new allGames.PlaneGame();
         AllResultsTable table = new AllResultsTable();
         Game currentGame;
 
@@ -27,7 +28,7 @@ namespace Mini_games
             InitializeComponent();
             this.ActiveUserMainForm = user;
             LoadActiveUser();
-            UpdateScore();
+            //UpdateScore();
         }
 
         private void LoadActiveUser()
@@ -181,8 +182,18 @@ namespace Mini_games
             {
                 panelGame.Controls.Clear();
                 panelMenu.Show();
-                UpdateScore();
+                //UpdateScore();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelMenu.Hide();
+
+            panelGame.Controls.Add(plane);
+            panelGame.Controls.Add(buttonGameExit);
+
+            this.Text = "Plane";
         }
     }
 }
