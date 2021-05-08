@@ -98,12 +98,12 @@ namespace Mini_games.allGames
             {
                 if(x is PictureBox && x.Tag == "enemy")
                 {
-                    x.Left -= 6;
+                    x.Left -= 5;
                     if(x.Left < 10)
                     {
                         int i;
                         i = rnd.Next(50, 600);
-                        x.Location = new Point(800, i);
+                        x.Location = new Point(1000, i);
                     }
 
                     if(b_1.Bounds.IntersectsWith(x.Bounds))
@@ -124,7 +124,7 @@ namespace Mini_games.allGames
                 {
                     if(x.Left < -150)
                     {
-                        x.Left = 700;
+                        x.Left = 900;
                     }
 
                     if(right == true)

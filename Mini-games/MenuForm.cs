@@ -35,17 +35,19 @@ namespace Mini_games
         {
             if (ActiveUserMainForm != null)
             {
-                textBoxNickname.Text = ActiveUserMainForm.Nickname.ToString();
-                textBoxPassword.Text = ActiveUserMainForm.Password.ToString();
+                lableNickname.Text = ActiveUserMainForm.Nickname.ToString();
+                //textBoxPassword.Text = ActiveUserMainForm.Password.ToString();
             }
         }
 
         private void buttonDino_Click(object sender, EventArgs e)
         {
-            panelMenu.Hide();
             
+            dino.Show();
+            panelMenu.Hide();
             panelGame.Controls.Add(dino);
-            panelGame.Controls.Add(buttonGameExit);
+            panelGame.Focus();
+            panelGame.Controls.Add(buttonExit);
 
             this.Text = "DinoChrome";
 
@@ -91,6 +93,7 @@ namespace Mini_games
             panelMenu.Hide();
 
             panelGame.Controls.Add(plane);
+            panelGame.Focus();
             panelGame.Controls.Add(buttonGameExit);
 
             this.Text = "Plane";
@@ -110,7 +113,7 @@ namespace Mini_games
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show(
+            DialogResult dialog = System.Windows.Forms.MessageBox.Show(
                 "Are you sure you want to quit?",
                 "Exit",
                 MessageBoxButtons.YesNo,
@@ -118,7 +121,7 @@ namespace Mini_games
                 );
 
             if(dialog == DialogResult.Yes)
-                Application.Exit();
+                System.Windows.Forms.Application.Exit();
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -129,12 +132,12 @@ namespace Mini_games
 
         private void Form2Closing_1(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void Form2Closed_1(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         public void UpdateScore()
@@ -205,7 +208,17 @@ namespace Mini_games
 
         private void MenuForm_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void panelGame_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void buttonClickExit(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

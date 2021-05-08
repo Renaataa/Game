@@ -25,12 +25,15 @@ namespace Mini_games.allGames
 
         private void tick(object sender, EventArgs e)
         {
-            //pictureBox12.Top = MousePosition.Y;
-            //pictureBox12.Left = MousePosition.X;
             if (outerRing.Width >= 200)
             {
+                if (plane.Bounds.IntersectsWith(innerRing.Bounds) && plane.Left > innerRing.Left && plane.Right < innerRing.Right
+                    && plane.Top > innerRing.Top && plane.Bottom < innerRing.Bottom)
+                    score++;
+                else
+                    score--;
                 outerRing.Left = rnd.Next(0, 700);
-                outerRing.Top = rnd.Next(50, 300);
+                outerRing.Top = rnd.Next(50, 400);
                 outerRing.Width = 3;
                 outerRing.Height = 3;
                 innerRing.Height = 2;

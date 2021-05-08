@@ -39,12 +39,12 @@ namespace Mini_games.allGames
                     {
                         score++;
                         labelScore.Text = "Score: " + score;
-                        topPipe[i].Top = rnd.Next(-400, -200);
+                        topPipe[i].Top = rnd.Next(-300, -100);
                         pipe[i].Top = topPipe[i].Bottom + 150 + (150 / (1 + rnd.Next(diff * 3, diff * 10)));
                         if (i == 1)
-                            pipe[1].Left = pipe[0].Left + 400 + rnd.Next(0, 100);
+                            pipe[1].Left = pipe[0].Left + 500 + rnd.Next(0, 100);
                         else if (i == 0)
-                            pipe[0].Left = pipe[1].Left + 400 + rnd.Next(0, 100);
+                            pipe[0].Left = pipe[1].Left + 500 + rnd.Next(0, 100);
                         topPipe[i].Left = pipe[i].Left;
                     }
                 }
@@ -72,7 +72,7 @@ namespace Mini_games.allGames
         {
             if (e.KeyCode == Keys.Space && ison == true)
             {
-                speed -= 8;
+                speed -= 10;
             }
             else if (e.KeyCode == Keys.Space && ison == false)
             {

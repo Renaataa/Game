@@ -40,13 +40,13 @@ namespace Mini_games.allGames
             // 
             // timer1
             // 
-            this.timer1.Interval = 40;
+            this.timer1.Interval = 20;
             this.timer1.Tick += new System.EventHandler(this.timerEvent);
             // 
             // bird
             // 
             this.bird.BackColor = System.Drawing.Color.Yellow;
-            this.bird.Location = new System.Drawing.Point(134, 215);
+            this.bird.Location = new System.Drawing.Point(61, 303);
             this.bird.Name = "bird";
             this.bird.Size = new System.Drawing.Size(33, 34);
             this.bird.TabIndex = 0;
@@ -55,9 +55,10 @@ namespace Mini_games.allGames
             // ground1
             // 
             this.ground1.BackColor = System.Drawing.Color.Peru;
-            this.ground1.Location = new System.Drawing.Point(-9, 435);
+            this.ground1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ground1.Location = new System.Drawing.Point(0, 650);
             this.ground1.Name = "ground1";
-            this.ground1.Size = new System.Drawing.Size(711, 50);
+            this.ground1.Size = new System.Drawing.Size(900, 50);
             this.ground1.TabIndex = 1;
             this.ground1.TabStop = false;
             this.ground1.Tag = "Ground";
@@ -66,12 +67,12 @@ namespace Mini_games.allGames
             // 
             this.labelScore.AutoEllipsis = true;
             this.labelScore.AutoSize = true;
-            this.labelScore.BackColor = System.Drawing.Color.Transparent;
+            this.labelScore.BackColor = System.Drawing.Color.Peru;
             this.labelScore.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.labelScore.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelScore.Location = new System.Drawing.Point(28, 37);
+            this.labelScore.Location = new System.Drawing.Point(3, 663);
             this.labelScore.Name = "labelScore";
-            this.labelScore.Size = new System.Drawing.Size(148, 36);
+            this.labelScore.Size = new System.Drawing.Size(101, 24);
             this.labelScore.TabIndex = 2;
             this.labelScore.Text = "Score: ";
             // 
@@ -82,7 +83,7 @@ namespace Mini_games.allGames
             this.Controls.Add(this.bird);
             this.Controls.Add(this.ground1);
             this.Name = "FlappyBirdGame";
-            this.Size = new System.Drawing.Size(684, 461);
+            this.Size = new System.Drawing.Size(900, 700);
             this.Load += new System.EventHandler(this.FlappyBirdGame_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyup);
             ((System.ComponentModel.ISupportInitialize)(this.bird)).EndInit();

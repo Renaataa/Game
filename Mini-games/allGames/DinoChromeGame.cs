@@ -104,7 +104,7 @@ namespace Mini_games.allGames
             {
                 if (x is PictureBox && x.Tag == "obstacle")
                 {
-                    int position = rnd.Next(600, 1000);
+                    int position = rnd.Next(1000, 1500);
                     x.Left = 640 + (x.Left + position + x.Width * 3);
                 }
             }

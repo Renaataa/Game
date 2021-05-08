@@ -40,7 +40,7 @@ namespace Mini_games
 
                 DatabaseDC.SubmitChanges();
 
-                MessageBox.Show("Your account was created.");
+                MessageBox.Show("Welcome home, newcomer");
 
                 textBoxNickname.Text = "";
                 textBoxPassword.Text = "";
@@ -51,19 +51,19 @@ namespace Mini_games
         {
             if (textBoxNickname.Text.Length == 0)
             {
-                MessageBox.Show("Nickname can't be empty.");
+                MessageBox.Show("We need to know your name");
                 return false;
             }
             if (textBoxPassword.Text.Length == 0)
             {
-                MessageBox.Show("Password can't be empty.");
+                MessageBox.Show("We need to know your password");
                 return false;
             }
             foreach(User user in DatabaseDC.Users)
             {
                 if (user.Nickname == textBoxNickname.Text)
                 {
-                    MessageBox.Show("This nickname already exists.");
+                    MessageBox.Show("We already know a traveler with that name");
                     return false;
                 }
             }
@@ -81,6 +81,11 @@ namespace Mini_games
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
