@@ -38,6 +38,10 @@ namespace Mini_games
                     DatabaseDC.Results.InsertOnSubmit(newResult);
                 }
 
+                Level newLevel = new Level();
+                newLevel.UserID = newUser.Id;
+                DatabaseDC.Levels.InsertOnSubmit(newLevel);
+
                 DatabaseDC.SubmitChanges();
 
                 MessageBox.Show("Welcome home, newcomer");

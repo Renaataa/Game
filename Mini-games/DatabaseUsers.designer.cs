@@ -39,6 +39,9 @@ namespace Mini_games
     partial void InsertResult(Result instance);
     partial void UpdateResult(Result instance);
     partial void DeleteResult(Result instance);
+    partial void InsertLevel(Level instance);
+    partial void UpdateLevel(Level instance);
+    partial void DeleteLevel(Level instance);
     #endregion
 		
 		public DatabaseUsersDataContext() : 
@@ -92,6 +95,14 @@ namespace Mini_games
 			get
 			{
 				return this.GetTable<Result>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Level> Levels
+		{
+			get
+			{
+				return this.GetTable<Level>();
 			}
 		}
 	}
@@ -224,6 +235,8 @@ namespace Mini_games
 		
 		private EntitySet<Result> _Results;
 		
+		private EntityRef<Level> _Level;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -239,6 +252,7 @@ namespace Mini_games
 		public User()
 		{
 			this._Results = new EntitySet<Result>(new Action<Result>(this.attach_Results), new Action<Result>(this.detach_Results));
+			this._Level = default(EntityRef<Level>);
 			OnCreated();
 		}
 		
@@ -312,6 +326,35 @@ namespace Mini_games
 			set
 			{
 				this._Results.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Level", Storage="_Level", ThisKey="Id", OtherKey="UserID", IsUnique=true, IsForeignKey=false)]
+		public Level Level
+		{
+			get
+			{
+				return this._Level.Entity;
+			}
+			set
+			{
+				Level previousValue = this._Level.Entity;
+				if (((previousValue != value) 
+							|| (this._Level.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Level.Entity = null;
+						previousValue.User = null;
+					}
+					this._Level.Entity = value;
+					if ((value != null))
+					{
+						value.User = this;
+					}
+					this.SendPropertyChanged("Level");
+				}
 			}
 		}
 		
@@ -508,6 +551,133 @@ namespace Mini_games
 					if ((value != null))
 					{
 						value.Results.Add(this);
+						this._UserID = value.Id;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Levels")]
+	public partial class Level : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Level1;
+		
+		private int _UserID;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnLevel1Changing(int value);
+    partial void OnLevel1Changed();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    #endregion
+		
+		public Level()
+		{
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Level]", Storage="_Level1", DbType="Int NOT NULL")]
+		public int Level1
+		{
+			get
+			{
+				return this._Level1;
+			}
+			set
+			{
+				if ((this._Level1 != value))
+				{
+					this.OnLevel1Changing(value);
+					this.SendPropertyChanging();
+					this._Level1 = value;
+					this.SendPropertyChanged("Level1");
+					this.OnLevel1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Level", Storage="_User", ThisKey="UserID", OtherKey="Id", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Level = null;
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Level = this;
 						this._UserID = value.Id;
 					}
 					else

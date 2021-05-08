@@ -17,7 +17,8 @@ namespace Mini_games
         User ActiveUserMainForm = new User();
         allGames.DinoChromeGame dino = new allGames.DinoChromeGame();
         allGames.FlappyBirdGame fbird = new allGames.FlappyBirdGame();
-        allGames.PlatformGame platform = new allGames.PlatformGame();
+        allGames.PlatformGameLevel1 platformL1 = new allGames.PlatformGameLevel1();
+        allGames.PlatformGameLevel2 platformL2 = new allGames.PlatformGameLevel2();
         allGames.TanksGame tanks = new allGames.TanksGame();
         allGames.PlaneGame plane = new allGames.PlaneGame();
         AllResultsTable table = new AllResultsTable();
@@ -70,10 +71,23 @@ namespace Mini_games
         {
             panelMenu.Hide();
 
-            panelGame.Controls.Add(platform);
+            Level CurrentLevel;
+            CurrentLevel = DatabaseDC.Levels.Single(data => data.UserID == ActiveUserMainForm.Id);
+
+            if (CurrentLevel.Level1 == 1)
+            {
+                panelGame.Controls.Add(platformL1);
+                this.Text = "PlatformL1";
+            }
+            if (CurrentLevel.Level1 == 2)
+            {
+                panelGame.Controls.Add(platformL2);
+                this.Text = "PlatformL2";
+            }
+
             panelGame.Controls.Add(buttonGameExit);
 
-            this.Text = "Platform";
+            currentGame = DatabaseDC.Games.Single(name => name.Name == "Platform");
         }
 
         private void buttonTanks_Click(object sender, EventArgs e)
@@ -147,10 +161,21 @@ namespace Mini_games
                 if(currentGame != null)
                 {
                     Result PreviousResult;
+                    Level CurrentLevel;
+                    CurrentLevel = DatabaseDC.Levels.Single(data => data.UserID == ActiveUserMainForm.Id);
                     int newDinoScore = dino.score;
                     int newFBScore = fbird.score;
                     int newTanksScore = tanks.score;
                     int newPlaneScore = plane.score;
+                    int newPlatformScore = 0;
+                    if (CurrentLevel.Level1 == 1)
+                    {
+                        newPlatformScore = platformL1.score;
+                    }
+                    if (CurrentLevel.Level1 == 2)
+                    {
+                        newPlatformScore = platformL2.score;
+                    }
 
                     PreviousResult = DatabaseDC.Results.Single(data => data.GameID == currentGame.Id && data.UserID == ActiveUserMainForm.Id);
 
@@ -178,6 +203,16 @@ namespace Mini_games
                         labelPlaneScore.Text = PreviousResult.Result1.ToString();
                     }
 
+                    if (currentGame.Id == 5)
+                    {
+                        if (CurrentLevel.Level1 == 1)
+                            PreviousResult.Result1 = newPlatformScore;
+                        else
+                            PreviousResult.Result1 += newPlatformScore;
+
+                        labelPlatformScore.Text = PreviousResult.Result1.ToString();
+                    }
+
                     DatabaseDC.SubmitChanges();
                 }
                 else
@@ -191,6 +226,7 @@ namespace Mini_games
                         if (i == 1) labelFBScore.Text = CurrentResult.Result1.ToString();
                         if (i == 2) labelTanksScore.Text = CurrentResult.Result1.ToString();
                         if (i == 3) labelPlaneScore.Text = CurrentResult.Result1.ToString();
+                        if (i == 4) labelPlatformScore.Text = CurrentResult.Result1.ToString();
                     }
                 }
             }
@@ -204,6 +240,24 @@ namespace Mini_games
                 panelMenu.Show();
                 UpdateScore();
             }
+
+            if (!panelMenu.Visible && String.Compare(this.Text, "PlatformL1") == 0 && e.KeyCode == Keys.N && platformL1.win)
+            {
+                Level PreviousLevel;
+                PreviousLevel = DatabaseDC.Levels.Single(data => data.UserID == ActiveUserMainForm.Id);
+                PreviousLevel.Level1 = 2;
+                DatabaseDC.SubmitChanges();
+
+                panelGame.Controls.Clear();
+                panelGame.Controls.Add(platformL2);
+
+                this.Text = "PlatformL2";
+            }
+        }
+
+        private void buttonClickExit(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
 
         private void MenuForm_Load(object sender, EventArgs e)
@@ -216,9 +270,9 @@ namespace Mini_games
 
         }
 
-        private void buttonClickExit(object sender, EventArgs e)
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
         {
-            Environment.Exit(0);
+
         }
     }
 }

@@ -78,11 +78,17 @@
     <Compile Include="allGames\DinoChromeGame.designer.cs">
       <DependentUpon>DinoChromeGame.cs</DependentUpon>
     </Compile>
-    <Compile Include="allGames\PlatformGame.cs">
+    <Compile Include="allGames\PlatformGame\PlatformGameLevel2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="allGames\PlatformGame.Designer.cs">
-      <DependentUpon>PlatformGame.cs</DependentUpon>
+    <Compile Include="allGames\PlatformGame\PlatformGameLevel2.Designer.cs">
+      <DependentUpon>PlatformGameLevel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="allGames\PlatformGame\PlatformGameLevel1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="allGames\PlatformGame\PlatformGameLevel1.Designer.cs">
+      <DependentUpon>PlatformGameLevel1.cs</DependentUpon>
     </Compile>
     <Compile Include="allGames\TanksGame.cs">
       <SubType>UserControl</SubType>
@@ -141,8 +147,11 @@
     <EmbeddedResource Include="allGames\PlaneGame.resx">
       <DependentUpon>PlaneGame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="allGames\PlatformGame.resx">
-      <DependentUpon>PlatformGame.cs</DependentUpon>
+    <EmbeddedResource Include="allGames\PlatformGame\PlatformGameLevel2.resx">
+      <DependentUpon>PlatformGameLevel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="allGames\PlatformGame\PlatformGameLevel1.resx">
+      <DependentUpon>PlatformGameLevel1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="allGames\TanksGame.resx">
       <DependentUpon>TanksGame.cs</DependentUpon>

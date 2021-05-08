@@ -76,7 +76,6 @@ C:\Users\mar31\source\Game2\Mini-games\obj\Debug\Mini-games.csproj.CoreCompileIn
 C:\Users\mar31\source\Game2\Mini-games\obj\Debug\Mini-games.exe
 C:\Users\mar31\source\Game2\Mini-games\obj\Debug\Mini-games.pdb
 D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.AllResultsTable.resources
-D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.allGames.PlatformGame.resources
 C:\Users\mar31\source\Game\Mini-games\obj\Debug\Mini_games.allGames.FlappyBirdGame.resources
 C:\Users\mar31\source\Game\Mini-games\obj\Debug\Mini_games.allGames.PlatformGame.resources
 C:\Users\mar31\source\Game\Mini-games\obj\Debug\Mini_games.AllResultsTable.resources
@@ -101,3 +100,5 @@ C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini-gam
 C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini_games.allGames.PlaneGame.resources
 D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.allGames.PlaneGame.resources
 D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.allGames.TanksGame.resources
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.allGames.PlatformGameLevel2.resources
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.allGames.PlatformGameLevel1.resources
