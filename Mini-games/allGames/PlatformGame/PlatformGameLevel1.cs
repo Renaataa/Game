@@ -59,7 +59,6 @@ namespace Mini_games.allGames
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.labelScore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -91,7 +90,6 @@ namespace Mini_games.allGames
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -350,7 +348,7 @@ namespace Mini_games.allGames
             this.pictureBox6.BackColor = System.Drawing.Color.SaddleBrown;
             this.pictureBox6.Location = new System.Drawing.Point(651, 252);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(246, 30);
+            this.pictureBox6.Size = new System.Drawing.Size(200, 30);
             this.pictureBox6.TabIndex = 16;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Tag = "platform";
@@ -405,30 +403,20 @@ namespace Mini_games.allGames
             this.pictureBox18.TabStop = false;
             this.pictureBox18.Tag = "coin";
             // 
-            // pictureBox19
-            // 
-            this.pictureBox19.BackColor = System.Drawing.Color.Yellow;
-            this.pictureBox19.Location = new System.Drawing.Point(872, 221);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox19.TabIndex = 17;
-            this.pictureBox19.TabStop = false;
-            this.pictureBox19.Tag = "coin";
-            // 
             // labelScore
             // 
             this.labelScore.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelScore.Location = new System.Drawing.Point(580, 3);
+            this.labelScore.Location = new System.Drawing.Point(534, 3);
             this.labelScore.Name = "labelScore";
             this.labelScore.Size = new System.Drawing.Size(317, 109);
             this.labelScore.TabIndex = 0;
             this.labelScore.Text = "Score: 0";
             this.labelScore.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelScore.UseCompatibleTextRendering = true;
             // 
             // PlatformGameLevel1
             // 
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.Controls.Add(this.pictureBox19);
             this.Controls.Add(this.pictureBox18);
             this.Controls.Add(this.pictureBox17);
             this.Controls.Add(this.pictureBox16);
@@ -495,7 +483,6 @@ namespace Mini_games.allGames
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             this.ResumeLayout(false);
 
         }

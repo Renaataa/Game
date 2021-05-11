@@ -119,6 +119,8 @@ namespace Mini_games
 		
 		private EntitySet<Result> _Results;
 		
+		private EntitySet<Level> _Levels;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -132,6 +134,7 @@ namespace Mini_games
 		public Game()
 		{
 			this._Results = new EntitySet<Result>(new Action<Result>(this.attach_Results), new Action<Result>(this.detach_Results));
+			this._Levels = new EntitySet<Level>(new Action<Level>(this.attach_Levels), new Action<Level>(this.detach_Levels));
 			OnCreated();
 		}
 		
@@ -188,6 +191,19 @@ namespace Mini_games
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Game_Level", Storage="_Levels", ThisKey="Id", OtherKey="GameID")]
+		public EntitySet<Level> Levels
+		{
+			get
+			{
+				return this._Levels;
+			}
+			set
+			{
+				this._Levels.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -219,6 +235,18 @@ namespace Mini_games
 			this.SendPropertyChanging();
 			entity.Game = null;
 		}
+		
+		private void attach_Levels(Level entity)
+		{
+			this.SendPropertyChanging();
+			entity.Game = this;
+		}
+		
+		private void detach_Levels(Level entity)
+		{
+			this.SendPropertyChanging();
+			entity.Game = null;
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
@@ -235,7 +263,7 @@ namespace Mini_games
 		
 		private EntitySet<Result> _Results;
 		
-		private EntityRef<Level> _Level;
+		private EntitySet<Level> _Levels;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -252,7 +280,7 @@ namespace Mini_games
 		public User()
 		{
 			this._Results = new EntitySet<Result>(new Action<Result>(this.attach_Results), new Action<Result>(this.detach_Results));
-			this._Level = default(EntityRef<Level>);
+			this._Levels = new EntitySet<Level>(new Action<Level>(this.attach_Levels), new Action<Level>(this.detach_Levels));
 			OnCreated();
 		}
 		
@@ -329,32 +357,16 @@ namespace Mini_games
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Level", Storage="_Level", ThisKey="Id", OtherKey="UserID", IsUnique=true, IsForeignKey=false)]
-		public Level Level
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Level", Storage="_Levels", ThisKey="Id", OtherKey="UserID")]
+		public EntitySet<Level> Levels
 		{
 			get
 			{
-				return this._Level.Entity;
+				return this._Levels;
 			}
 			set
 			{
-				Level previousValue = this._Level.Entity;
-				if (((previousValue != value) 
-							|| (this._Level.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Level.Entity = null;
-						previousValue.User = null;
-					}
-					this._Level.Entity = value;
-					if ((value != null))
-					{
-						value.User = this;
-					}
-					this.SendPropertyChanged("Level");
-				}
+				this._Levels.Assign(value);
 			}
 		}
 		
@@ -385,6 +397,18 @@ namespace Mini_games
 		}
 		
 		private void detach_Results(Result entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_Levels(Level entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Levels(Level entity)
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
@@ -593,6 +617,10 @@ namespace Mini_games
 		
 		private int _UserID;
 		
+		private int _GameID;
+		
+		private EntityRef<Game> _Game;
+		
 		private EntityRef<User> _User;
 		
     #region Extensibility Method Definitions
@@ -603,10 +631,13 @@ namespace Mini_games
     partial void OnLevel1Changed();
     partial void OnUserIDChanging(int value);
     partial void OnUserIDChanged();
+    partial void OnGameIDChanging(int value);
+    partial void OnGameIDChanged();
     #endregion
 		
 		public Level()
 		{
+			this._Game = default(EntityRef<Game>);
 			this._User = default(EntityRef<User>);
 			OnCreated();
 		}
@@ -655,6 +686,64 @@ namespace Mini_games
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GameID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int GameID
+		{
+			get
+			{
+				return this._GameID;
+			}
+			set
+			{
+				if ((this._GameID != value))
+				{
+					if (this._Game.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnGameIDChanging(value);
+					this.SendPropertyChanging();
+					this._GameID = value;
+					this.SendPropertyChanged("GameID");
+					this.OnGameIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Game_Level", Storage="_Game", ThisKey="GameID", OtherKey="Id", IsForeignKey=true)]
+		public Game Game
+		{
+			get
+			{
+				return this._Game.Entity;
+			}
+			set
+			{
+				Game previousValue = this._Game.Entity;
+				if (((previousValue != value) 
+							|| (this._Game.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Game.Entity = null;
+						previousValue.Levels.Remove(this);
+					}
+					this._Game.Entity = value;
+					if ((value != null))
+					{
+						value.Levels.Add(this);
+						this._GameID = value.Id;
+					}
+					else
+					{
+						this._GameID = default(int);
+					}
+					this.SendPropertyChanged("Game");
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Level", Storage="_User", ThisKey="UserID", OtherKey="Id", IsForeignKey=true)]
 		public User User
 		{
@@ -672,12 +761,12 @@ namespace Mini_games
 					if ((previousValue != null))
 					{
 						this._User.Entity = null;
-						previousValue.Level = null;
+						previousValue.Levels.Remove(this);
 					}
 					this._User.Entity = value;
 					if ((value != null))
 					{
-						value.Level = this;
+						value.Levels.Add(this);
 						this._UserID = value.Id;
 					}
 					else

@@ -105,7 +105,7 @@ namespace Mini_games.allGames
             // labelScore
             // 
             this.labelScore.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelScore.Location = new System.Drawing.Point(580, 3);
+            this.labelScore.Location = new System.Drawing.Point(530, 0);
             this.labelScore.Name = "labelScore";
             this.labelScore.Size = new System.Drawing.Size(317, 109);
             this.labelScore.TabIndex = 0;
@@ -729,14 +729,14 @@ namespace Mini_games.allGames
                 }
             }
 
-            player.Left = 27;
-            player.Top = 465;
+            player.Left = 28;
+            player.Top = 383;
 
             enemyOne.Left = 167;
-            enemyTwo.Left = 389;
+            enemyTwo.Left = 747;
 
             horizontalPlatform.Left = 228;
-            verticalPlatform.Top = 283;
+            verticalPlatform.Top = 383;
 
             timer.Start();
         }

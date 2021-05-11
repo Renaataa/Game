@@ -73,7 +73,7 @@ namespace Mini_games
 
         private void label4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Welp you better remember it");
+            MessageBox.Show("Help you better remember it");
         }
 
         private void buttonExit_click(object sender, EventArgs e)

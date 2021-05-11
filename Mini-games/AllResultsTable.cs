@@ -105,5 +105,10 @@ namespace Mini_games
                     break;
             }
         }
+
+        private void AllResultsTable_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

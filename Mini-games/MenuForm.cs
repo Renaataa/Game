@@ -72,7 +72,7 @@ namespace Mini_games
             panelMenu.Hide();
 
             Level CurrentLevel;
-            CurrentLevel = DatabaseDC.Levels.Single(data => data.UserID == ActiveUserMainForm.Id);
+            CurrentLevel = DatabaseDC.Levels.Single(data => data.GameID == 5 && data.UserID == ActiveUserMainForm.Id);
 
             if (CurrentLevel.Level1 == 1)
             {
@@ -162,7 +162,7 @@ namespace Mini_games
                 {
                     Result PreviousResult;
                     Level CurrentLevel;
-                    CurrentLevel = DatabaseDC.Levels.Single(data => data.UserID == ActiveUserMainForm.Id);
+                    CurrentLevel = DatabaseDC.Levels.Single(data => data.GameID == 5 && data.UserID == ActiveUserMainForm.Id);
                     int newDinoScore = dino.score;
                     int newFBScore = fbird.score;
                     int newTanksScore = tanks.score;
@@ -232,6 +232,17 @@ namespace Mini_games
             }
         }
 
+        private void UpdateLevel()
+        {
+            if (platformL1.win)
+            {
+                Level PreviousLevel;
+                PreviousLevel = DatabaseDC.Levels.Single(data => data.GameID == 5 && data.UserID == ActiveUserMainForm.Id);
+                PreviousLevel.Level1 = 2;
+                DatabaseDC.SubmitChanges();
+            }
+        }
+
         private void MenuForm_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
@@ -239,15 +250,11 @@ namespace Mini_games
                 panelGame.Controls.Clear();
                 panelMenu.Show();
                 UpdateScore();
+                UpdateLevel();
             }
 
             if (!panelMenu.Visible && String.Compare(this.Text, "PlatformL1") == 0 && e.KeyCode == Keys.N && platformL1.win)
             {
-                Level PreviousLevel;
-                PreviousLevel = DatabaseDC.Levels.Single(data => data.UserID == ActiveUserMainForm.Id);
-                PreviousLevel.Level1 = 2;
-                DatabaseDC.SubmitChanges();
-
                 panelGame.Controls.Clear();
                 panelGame.Controls.Add(platformL2);
 

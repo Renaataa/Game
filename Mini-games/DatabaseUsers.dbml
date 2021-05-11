@@ -5,6 +5,7 @@
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Game_Result" Member="Results" ThisKey="Id" OtherKey="GameID" Type="Result" />
+      <Association Name="Game_Level" Member="Levels" ThisKey="Id" OtherKey="GameID" Type="Level" />
     </Type>
   </Table>
   <Table Name="dbo.Users" Member="Users">
@@ -13,7 +14,7 @@
       <Column Name="Nickname" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="Password" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
       <Association Name="User_Result" Member="Results" ThisKey="Id" OtherKey="UserID" Type="Result" />
-      <Association Name="User_Level" Member="Level" ThisKey="Id" OtherKey="UserID" Type="Level" Cardinality="One" />
+      <Association Name="User_Level" Member="Levels" ThisKey="Id" OtherKey="UserID" Type="Level" />
     </Type>
   </Table>
   <Table Name="dbo.Result" Member="Results">
@@ -29,6 +30,8 @@
     <Type Name="Level">
       <Column Name="[Level]" Member="Level1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GameID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Game_Level" Member="Game" ThisKey="GameID" OtherKey="Id" Type="Game" IsForeignKey="true" />
       <Association Name="User_Level" Member="User" ThisKey="UserID" OtherKey="Id" Type="User" IsForeignKey="true" />
     </Type>
   </Table>

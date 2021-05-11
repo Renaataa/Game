@@ -35,12 +35,17 @@ namespace Mini_games
                     Result newResult = new Result();
                     newResult.GameID = i + 1;
                     newResult.UserID = newUser.Id;
+
+                    Level newLevel = new Level();
+                    newLevel.GameID = i + 1;
+                    newLevel.UserID = newUser.Id;
+                    newLevel.Level1 = 1;
+
+                    DatabaseDC.Levels.InsertOnSubmit(newLevel);
                     DatabaseDC.Results.InsertOnSubmit(newResult);
                 }
 
-                Level newLevel = new Level();
-                newLevel.UserID = newUser.Id;
-                DatabaseDC.Levels.InsertOnSubmit(newLevel);
+                
 
                 DatabaseDC.SubmitChanges();
 
@@ -90,6 +95,11 @@ namespace Mini_games
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
