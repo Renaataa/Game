@@ -36,23 +36,26 @@ namespace Mini_games
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.listBoxUser = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(378, 31);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(359, 29);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 17);
+            this.label4.Size = new System.Drawing.Size(100, 29);
             this.label4.TabIndex = 0;
             this.label4.Text = "Results";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(41, 98);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 17);
+            this.label1.Size = new System.Drawing.Size(55, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Game:";
             // 
@@ -61,7 +64,10 @@ namespace Mini_games
             this.comboBoxGames.FormattingEnabled = true;
             this.comboBoxGames.Items.AddRange(new object[] {
             "DinoChrome",
-            "FlappyBird"});
+            "FlappyBird",
+            "Platform",
+            "Plane",
+            "Tanks"});
             this.comboBoxGames.Location = new System.Drawing.Point(106, 95);
             this.comboBoxGames.Name = "comboBoxGames";
             this.comboBoxGames.Size = new System.Drawing.Size(228, 24);
@@ -104,10 +110,21 @@ namespace Mini_games
             this.listBoxUser.Size = new System.Drawing.Size(128, 260);
             this.listBoxUser.TabIndex = 18;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(745, 460);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(93, 18);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "ESC to exit";
+            // 
             // AllResultsTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.listBoxUser);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -131,5 +148,6 @@ namespace Mini_games
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox listBoxUser;
+        private System.Windows.Forms.Label label5;
     }
 }

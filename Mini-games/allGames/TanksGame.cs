@@ -103,7 +103,7 @@ namespace Mini_games.allGames
                     {
                         int i;
                         i = rnd.Next(50, 600);
-                        x.Location = new Point(1000, i);
+                        x.Location = new Point(1200, i);
                     }
 
                     if(b_1.Bounds.IntersectsWith(x.Bounds))
@@ -130,6 +130,12 @@ namespace Mini_games.allGames
                     if(right == true)
                     {
                         x.Left -= 5;
+                    }
+
+                    if(b_1.Bounds.IntersectsWith(x.Bounds))
+                    {
+                        b_1.Left = ourTank.Left;
+                        b_1.Top = ourTank.Top + 10;
                     }
                 }
             }
