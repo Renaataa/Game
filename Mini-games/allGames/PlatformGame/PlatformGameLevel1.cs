@@ -9,7 +9,7 @@ namespace Mini_games.allGames
 
         int jumpSpeed;
         int force;
-        public int score = 0;
+        int score = 0;
         int playerSpeed = 7;
 
         int horizontalSpeed = 5;
@@ -19,6 +19,10 @@ namespace Mini_games.allGames
         int enemyTwoSpeed = 3;
 
         public bool win = false;
+
+        public delegate void ScoreHandler(int data);
+        public event ScoreHandler ScoreUpdate;
+        public event ScoreHandler LevelUpdate;
 
         public PlatformGameLevel1()
         {
@@ -603,6 +607,8 @@ namespace Mini_games.allGames
                 timer.Stop();
                 gameOver = true;
                 win = true;
+                if (ScoreUpdate != null) ScoreUpdate(score);
+                if (LevelUpdate != null) LevelUpdate(2);
                 labelScore.Text = "Score: " + score + Environment.NewLine + "Your quest is complete!"
                                                     + Environment.NewLine + "R - reset"
                                                     + Environment.NewLine + "N - next level"; ;

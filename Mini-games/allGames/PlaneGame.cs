@@ -14,9 +14,12 @@ namespace Mini_games.allGames
     {
         bool up, down, left, right;
         Random rnd = new Random();
-        public int score = 0;
+        int score = 0;
         int fly = 0;
         MouseEventArgs me;
+
+        public delegate void ScoreHandler(int score);
+        public event ScoreHandler ScoreUpdate;
 
         public PlaneGame()
         {

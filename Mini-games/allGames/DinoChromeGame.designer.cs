@@ -47,9 +47,10 @@ namespace Mini_games.allGames
             // scoreText
             // 
             this.scoreText.AutoSize = true;
-            this.scoreText.Location = new System.Drawing.Point(12, 5);
+            this.scoreText.Location = new System.Drawing.Point(18, 8);
+            this.scoreText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.scoreText.Name = "scoreText";
-            this.scoreText.Size = new System.Drawing.Size(48, 13);
+            this.scoreText.Size = new System.Drawing.Size(69, 20);
             this.scoreText.TabIndex = 8;
             this.scoreText.Tag = "scoreText";
             this.scoreText.Text = "Score- 0";
@@ -65,9 +66,10 @@ namespace Mini_games.allGames
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Black;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Location = new System.Drawing.Point(537, 631);
+            this.pictureBox2.Location = new System.Drawing.Point(806, 971);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 30);
+            this.pictureBox2.Size = new System.Drawing.Size(42, 46);
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Tag = "obstacle";
@@ -76,9 +78,10 @@ namespace Mini_games.allGames
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Location = new System.Drawing.Point(409, 603);
+            this.pictureBox1.Location = new System.Drawing.Point(614, 928);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(49, 58);
+            this.pictureBox1.Size = new System.Drawing.Size(74, 89);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Tag = "obstacle";
@@ -87,9 +90,10 @@ namespace Mini_games.allGames
             // 
             this.obstacle.BackColor = System.Drawing.Color.Black;
             this.obstacle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.obstacle.Location = new System.Drawing.Point(300, 605);
+            this.obstacle.Location = new System.Drawing.Point(450, 931);
+            this.obstacle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.obstacle.Name = "obstacle";
-            this.obstacle.Size = new System.Drawing.Size(25, 58);
+            this.obstacle.Size = new System.Drawing.Size(38, 89);
             this.obstacle.TabIndex = 7;
             this.obstacle.TabStop = false;
             this.obstacle.Tag = "obstacle";
@@ -98,9 +102,10 @@ namespace Mini_games.allGames
             // 
             this.trex.BackColor = System.Drawing.Color.Transparent;
             this.trex.Image = global::Mini_games.Properties.Resources.trex;
-            this.trex.Location = new System.Drawing.Point(39, 595);
+            this.trex.Location = new System.Drawing.Point(58, 915);
+            this.trex.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.trex.Name = "trex";
-            this.trex.Size = new System.Drawing.Size(54, 66);
+            this.trex.Size = new System.Drawing.Size(81, 102);
             this.trex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.trex.TabIndex = 5;
             this.trex.TabStop = false;
@@ -111,16 +116,17 @@ namespace Mini_games.allGames
             this.floor.BackColor = System.Drawing.Color.Black;
             this.floor.Cursor = System.Windows.Forms.Cursors.Default;
             this.floor.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.floor.Location = new System.Drawing.Point(0, 660);
+            this.floor.Location = new System.Drawing.Point(0, 1015);
+            this.floor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.floor.Name = "floor";
-            this.floor.Size = new System.Drawing.Size(900, 40);
+            this.floor.Size = new System.Drawing.Size(1350, 62);
             this.floor.TabIndex = 4;
             this.floor.TabStop = false;
             this.floor.Tag = "floor";
             // 
             // DinoChromeGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -130,8 +136,9 @@ namespace Mini_games.allGames
             this.Controls.Add(this.obstacle);
             this.Controls.Add(this.trex);
             this.Controls.Add(this.floor);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "DinoChromeGame";
-            this.Size = new System.Drawing.Size(900, 700);
+            this.Size = new System.Drawing.Size(1350, 1077);
             this.Load += new System.EventHandler(this.UserControlDino_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);

@@ -21,7 +21,10 @@ namespace Mini_games.allGames
 
         bool up, down, right;
         Random rnd = new Random();
-        public int score;
+        int score;
+
+        public delegate void ScoreHandler(int score);
+        public event ScoreHandler ScoreUpdate;
 
         private void resetGame()
         {
@@ -62,6 +65,7 @@ namespace Mini_games.allGames
                     {
                         labelOver.Visible = true;
                         tankTimer.Stop();
+                        if (ScoreUpdate != null) ScoreUpdate(score);
                     }
                 }
             }
@@ -203,6 +207,11 @@ namespace Mini_games.allGames
             enemysMove();
             bulletMove();
             gameResult();
+        }
+
+        private void TanksGame_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

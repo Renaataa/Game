@@ -20,11 +20,15 @@ namespace Mini_games.allGames
         int diff = 0;
         int speed = 0;
         int gravity = 1;
-        public int score = 0;
+        int score = 0;
         bool ison = false;
         Random rnd = new Random();
         PictureBox[] pipe = new PictureBox[6];
         PictureBox[] topPipe = new PictureBox[6];
+
+        public delegate void ScoreHandler(int score);
+        public event ScoreHandler ScoreUpdate;
+
         private void timerEvent(object sender, EventArgs e)
         {
             if (ison == true)
@@ -64,7 +68,8 @@ namespace Mini_games.allGames
         }
         private void endGame()
         {
-            timer1.Stop();
+            timer1.Stop(); 
+            if (ScoreUpdate != null) ScoreUpdate(score);
             labelScore.Text += " Game over! Press R to start OR press Esc to exit";
         }
 

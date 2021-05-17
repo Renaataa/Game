@@ -49,6 +49,7 @@ namespace Mini_games
             panelGame.Controls.Add(dino);
             panelGame.Focus();
             panelGame.Controls.Add(buttonExit);
+            dino.Notify += RecordNewScore;
 
             this.Text = "DinoChrome";
 
@@ -61,6 +62,7 @@ namespace Mini_games
             
             panelGame.Controls.Add(fbird);
             panelGame.Controls.Add(buttonGameExit);
+            fbird.ScoreUpdate += RecordNewScore;
 
             this.Text = "FlappyBird";
 
@@ -77,11 +79,14 @@ namespace Mini_games
             if (CurrentLevel.Level1 == 1)
             {
                 panelGame.Controls.Add(platformL1);
+                platformL1.ScoreUpdate += RecordNewScore;
+                platformL1.LevelUpdate += UpdateLevel;
                 this.Text = "PlatformL1";
             }
             if (CurrentLevel.Level1 == 2)
             {
                 panelGame.Controls.Add(platformL2);
+                platformL2.ScoreUpdate += RecordNewScore;
                 this.Text = "PlatformL2";
             }
 
@@ -96,6 +101,7 @@ namespace Mini_games
 
             panelGame.Controls.Add(tanks);
             panelGame.Controls.Add(buttonGameExit);
+            tanks.ScoreUpdate += RecordNewScore;
 
             this.Text = "Tanks";
 
@@ -109,6 +115,7 @@ namespace Mini_games
             panelGame.Controls.Add(plane);
             panelGame.Focus();
             panelGame.Controls.Add(buttonGameExit);
+            plane.ScoreUpdate += RecordNewScore;
 
             this.Text = "Plane";
 
@@ -156,91 +163,58 @@ namespace Mini_games
 
         public void UpdateScore()
         {
-            if (ActiveUserMainForm != null)
+            
+            if (ActiveUserMainForm != null && currentGame == null)
             {
-                if(currentGame != null)
+                Result CurrentResult;
+                int gameCount = DatabaseDC.Games.Count();
+                for (int i = 0; i < gameCount; i++)
                 {
-                    Result PreviousResult;
-                    Level CurrentLevel;
-                    CurrentLevel = DatabaseDC.Levels.Single(data => data.GameID == 5 && data.UserID == ActiveUserMainForm.Id);
-                    int newDinoScore = dino.score;
-                    int newFBScore = fbird.score;
-                    int newTanksScore = tanks.score;
-                    int newPlaneScore = plane.score;
-                    int newPlatformScore = 0;
-                    if (CurrentLevel.Level1 == 1)
-                    {
-                        newPlatformScore = platformL1.score;
-                    }
-                    if (CurrentLevel.Level1 == 2)
-                    {
-                        newPlatformScore = platformL2.score;
-                    }
-
-                    PreviousResult = DatabaseDC.Results.Single(data => data.GameID == currentGame.Id && data.UserID == ActiveUserMainForm.Id);
-
-                    if (currentGame.Id == 1 && newDinoScore > PreviousResult.Result1)
-                    {
-                        PreviousResult.Result1 = newDinoScore;
-                        labelDinoScore.Text = PreviousResult.Result1.ToString();
-                    }
-
-                    if (currentGame.Id == 2 && newFBScore > PreviousResult.Result1)
-                    {
-                        PreviousResult.Result1 = newFBScore;
-                        labelFBScore.Text = PreviousResult.Result1.ToString();
-                    }
-
-                    if (currentGame.Id == 3 && newTanksScore > PreviousResult.Result1)
-                    {
-                        PreviousResult.Result1 = newTanksScore;
-                        labelTanksScore.Text = PreviousResult.Result1.ToString();
-                    }
-
-                    if (currentGame.Id == 4 && newPlaneScore > PreviousResult.Result1)
-                    {
-                        PreviousResult.Result1 = newPlaneScore;
-                        labelPlaneScore.Text = PreviousResult.Result1.ToString();
-                    }
-
-                    if (currentGame.Id == 5)
-                    {
-                        if (CurrentLevel.Level1 == 1)
-                            PreviousResult.Result1 = newPlatformScore;
-                        else
-                            PreviousResult.Result1 += newPlatformScore;
-
-                        labelPlatformScore.Text = PreviousResult.Result1.ToString();
-                    }
-
-                    DatabaseDC.SubmitChanges();
-                }
-                else
-                {
-                    Result CurrentResult;
-                    int gameCount = DatabaseDC.Games.Count();
-                    for (int i = 0; i < gameCount; i++)
-                    {
-                        CurrentResult = DatabaseDC.Results.Single(data => data.GameID == i+1 && data.UserID == ActiveUserMainForm.Id);
-                        if (i == 0) labelDinoScore.Text = CurrentResult.Result1.ToString();
-                        if (i == 1) labelFBScore.Text = CurrentResult.Result1.ToString();
-                        if (i == 2) labelTanksScore.Text = CurrentResult.Result1.ToString();
-                        if (i == 3) labelPlaneScore.Text = CurrentResult.Result1.ToString();
-                        if (i == 4) labelPlatformScore.Text = CurrentResult.Result1.ToString();
-                    }
+                    
+                    CurrentResult = DatabaseDC.Results.Single(data => data.GameID == i+1 && data.UserID == ActiveUserMainForm.Id);
+                    if (i == 0) labelDinoScore.Text = CurrentResult.Result1.ToString();
+                    if (i == 1) labelFBScore.Text = CurrentResult.Result1.ToString();
+                    if (i == 2) labelTanksScore.Text = CurrentResult.Result1.ToString();
+                    if (i == 3) labelPlaneScore.Text = CurrentResult.Result1.ToString();
+                    if (i == 4) labelPlatformScore.Text = CurrentResult.Result1.ToString();
                 }
             }
         }
 
-        private void UpdateLevel()
+        public void RecordNewScore(int score)
         {
-            if (platformL1.win)
+            
+            if (ActiveUserMainForm != null && currentGame != null)
             {
-                Level PreviousLevel;
-                PreviousLevel = DatabaseDC.Levels.Single(data => data.GameID == 5 && data.UserID == ActiveUserMainForm.Id);
-                PreviousLevel.Level1 = 2;
+                int gameCount = DatabaseDC.Games.Count();
+                Level CurrentLevel;
+                Result PreviousResult;
+                CurrentLevel = DatabaseDC.Levels.Single(data => data.GameID == 5 && data.UserID == ActiveUserMainForm.Id);
+                PreviousResult = DatabaseDC.Results.Single(data => data.GameID == currentGame.Id && data.UserID == ActiveUserMainForm.Id);
+                
+                if (score > PreviousResult.Result1)
+                {
+                    if (currentGame.Id == 5 && CurrentLevel.Level1 != 1)
+                        PreviousResult.Result1 += score;
+                    else PreviousResult.Result1 = score;
+
+                    if (currentGame.Id == 1) labelDinoScore.Text = PreviousResult.Result1.ToString();
+                    if (currentGame.Id == 2) labelFBScore.Text = PreviousResult.Result1.ToString();
+                    if (currentGame.Id == 3) labelTanksScore.Text = PreviousResult.Result1.ToString();
+                    if (currentGame.Id == 4) labelPlaneScore.Text = PreviousResult.Result1.ToString();
+                    if (currentGame.Id == 5) labelPlatformScore.Text = PreviousResult.Result1.ToString();
+                }
+
                 DatabaseDC.SubmitChanges();
             }
+        }
+
+        private void UpdateLevel(int level)
+        {
+            Level PreviousLevel;
+            PreviousLevel = DatabaseDC.Levels.Single(data => data.GameID == 5 && data.UserID == ActiveUserMainForm.Id);
+            PreviousLevel.Level1 = level;
+            DatabaseDC.SubmitChanges();
         }
 
         private void MenuForm_KeyUp(object sender, KeyEventArgs e)
@@ -250,7 +224,6 @@ namespace Mini_games
                 panelGame.Controls.Clear();
                 panelMenu.Show();
                 UpdateScore();
-                UpdateLevel();
             }
 
             if (!panelMenu.Visible && String.Compare(this.Text, "PlatformL1") == 0 && e.KeyCode == Keys.N && platformL1.win)

@@ -15,9 +15,12 @@ namespace Mini_games.allGames
         bool jumping = false;
         int jumpSpeed = 10;
         int force = 12;
-        public int score = 0;
+        int score = 0;
         int obstacleSpeed = 10;
         Random rnd = new Random();
+
+        public delegate void ScoreHandler(int score);
+        public event ScoreHandler Notify;
 
         public DinoChromeGame()
         {
@@ -57,6 +60,7 @@ namespace Mini_games.allGames
                     if (trex.Bounds.IntersectsWith(x.Bounds))
                     {
                         gameTimer.Stop();
+                        if (Notify != null) Notify(score);
                         trex.Image = Properties.Resources.trex_dead;
                         scoreText.Text += "  Press R to start OR press Esc to exit";
                     }
