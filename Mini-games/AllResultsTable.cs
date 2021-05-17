@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Linq;
 
 namespace Mini_games
 {
@@ -31,6 +32,7 @@ namespace Mini_games
 
         private void comboBoxGames_SelectedIndexChanged(object sender, EventArgs e)
         {
+        //    comboBoxGames.SelectedItem = 
             listBoxResults.Items.Clear();
             listBoxUser.Items.Clear();
 
@@ -45,6 +47,7 @@ namespace Mini_games
                         {
                             if (u.Id == r.UserID && r.GameID == 1)
                             {
+                                DatabaseUsers.Refresh(RefreshMode.OverwriteCurrentValues, DatabaseUsers.Results);
                                 listBoxUser.Items.Add(u.Nickname);
                                 listBoxResults.Items.Add(r.Result1);
                             }
@@ -58,6 +61,7 @@ namespace Mini_games
                         {
                             if (u.Id == r.UserID && r.GameID == 2)
                             {
+                                DatabaseUsers.Refresh(RefreshMode.OverwriteCurrentValues, DatabaseUsers.Results);
                                 listBoxUser.Items.Add(u.Nickname);
                                 listBoxResults.Items.Add(r.Result1);
                             }
@@ -71,6 +75,7 @@ namespace Mini_games
                         {
                             if (u.Id == r.UserID && r.GameID == 5)
                             {
+                                DatabaseUsers.Refresh(RefreshMode.OverwriteCurrentValues, DatabaseUsers.Results);
                                 listBoxUser.Items.Add(u.Nickname);
                                 listBoxResults.Items.Add(r.Result1);
                             }
@@ -84,6 +89,7 @@ namespace Mini_games
                         {
                             if (u.Id == r.UserID && r.GameID == 4)
                             {
+                                DatabaseUsers.Refresh(RefreshMode.OverwriteCurrentValues, DatabaseUsers.Results);
                                 listBoxUser.Items.Add(u.Nickname);
                                 listBoxResults.Items.Add(r.Result1);
                             }
@@ -97,6 +103,7 @@ namespace Mini_games
                         {
                             if (u.Id == r.UserID && r.GameID == 3)
                             {
+                                DatabaseUsers.Refresh(RefreshMode.OverwriteCurrentValues, DatabaseUsers.Results);
                                 listBoxUser.Items.Add(u.Nickname);
                                 listBoxResults.Items.Add(r.Result1);
                             }
@@ -108,7 +115,8 @@ namespace Mini_games
 
         private void AllResultsTable_Load(object sender, EventArgs e)
         {
-
+            //listBoxResults.Items.Clear();
+            //listBoxUser.Items.Clear();
         }
     }
 }
