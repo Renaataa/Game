@@ -141,6 +141,21 @@ namespace Mini_games.allGames
                         b_1.Left = ourTank.Left;
                         b_1.Top = ourTank.Top + 10;
                     }
+
+                    if(enemy1.Bounds.IntersectsWith(x.Bounds))
+                    {
+                            if (enemy1.Top > x.Top)
+                                enemy1.Top = x.Bottom;
+                            else
+                                enemy1.Top = x.Top + enemy1.Height;
+                    }
+                    if (enemy2.Bounds.IntersectsWith(x.Bounds))
+                    {
+                            if (enemy2.Top > x.Top)
+                                enemy2.Top = x.Bottom;
+                            else
+                                enemy2.Top = x.Top - enemy2.Height;
+                    }
                 }
             }
         }
