@@ -86,7 +86,6 @@ C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\bin\Debug\Mini-gam
 C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini-games.csprojAssemblyReference.cache
 C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini_games.allGames.DinoChromeGame.resources
 C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini_games.allGames.FlappyBirdGame.resources
-C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini_games.allGames.PlatformGame.resources
 C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini_games.allGames.TanksGame.resources
 C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini_games.AllResultsTable.resources
 C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini_games.MenuForm.resources
@@ -106,3 +105,8 @@ C:\Users\mar31\source\Game2\Mini-games\obj\Debug\Mini_games.allGames.PlaneGame.r
 C:\Users\mar31\source\Game2\Mini-games\obj\Debug\Mini_games.allGames.PlatformGameLevel2.resources
 C:\Users\mar31\source\Game2\Mini-games\obj\Debug\Mini_games.allGames.PlatformGameLevel1.resources
 C:\Users\mar31\source\Game2\Mini-games\obj\Debug\Mini_games.allGames.TanksGame.resources
+D:\Uczelnia\semestr6\Inz oprog\Mini-games\Mini-games\obj\Debug\Mini_games.allGames.PlatformGame.PlatformMenu.resources
+C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini_games.allGames.PlatformGameLevel2.resources
+C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini_games.allGames.PlatformGameLevel1.resources
+C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini_games.allGames.PlatformGame.PlatformMenu.resources
+C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\bin\Debug\bgm1.wav

@@ -90,6 +90,12 @@
     <Compile Include="allGames\PlatformGame\PlatformGameLevel1.Designer.cs">
       <DependentUpon>PlatformGameLevel1.cs</DependentUpon>
     </Compile>
+    <Compile Include="allGames\PlatformGame\PlatformMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="allGames\PlatformGame\PlatformMenu.Designer.cs">
+      <DependentUpon>PlatformMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="allGames\TanksGame.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="allGames\PlatformGame\PlatformGameLevel1.resx">
       <DependentUpon>PlatformGameLevel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="allGames\PlatformGame\PlatformMenu.resx">
+      <DependentUpon>PlatformMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="allGames\TanksGame.resx">
       <DependentUpon>TanksGame.cs</DependentUpon>
@@ -229,6 +238,41 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tank_bad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tanks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlappyBird.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Platform.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Res.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\score.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bgm1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -558,7 +558,7 @@ namespace Mini_games.allGames
 
         private void PlatformGameTimerEvent(object sender, EventArgs e)
         {
-            labelScore.Text = "Score: " + score + Environment.NewLine + "Collect the coins" 
+            labelScore.Text = "Score: " + score + Environment.NewLine + "Collect all the coins" 
                                                 + Environment.NewLine + "A, D, W: <-, ->, ^"; ;
 
             player.Top += jumpSpeed;
@@ -667,7 +667,7 @@ namespace Mini_games.allGames
                                                     + Environment.NewLine + "R - reset";
             }
 
-            if(player.Bounds.IntersectsWith(door.Bounds))
+            if(player.Bounds.IntersectsWith(door.Bounds) && score == 23)
             {
                 timer.Stop();
                 gameOver = true;

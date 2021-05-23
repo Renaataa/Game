@@ -86,7 +86,7 @@ namespace Mini_games
             // 
             // buttonLogIn
             // 
-            this.buttonLogIn.BackColor = System.Drawing.Color.DarkRed;
+            this.buttonLogIn.BackColor = System.Drawing.Color.SkyBlue;
             this.buttonLogIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLogIn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonLogIn.Dock = System.Windows.Forms.DockStyle.Bottom;
