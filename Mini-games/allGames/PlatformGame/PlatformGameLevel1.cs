@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Mini_games.allGames
 {
@@ -557,6 +558,9 @@ namespace Mini_games.allGames
                         {
                             timer.Stop();
                             gameOver = true;
+                            SoundPlayer sp = new SoundPlayer();
+                            sp.SoundLocation = @".\ko.wav";
+                            sp.Play();
                             labelScore.Text = "Score: " + score + Environment.NewLine + "You were killed!"
                                                                 + Environment.NewLine + "R - reset";
                         }
@@ -598,6 +602,9 @@ namespace Mini_games.allGames
             {
                 timer.Stop();
                 gameOver = true;
+                SoundPlayer sp = new SoundPlayer();
+                sp.SoundLocation = @".\ko.wav";
+                sp.Play();
                 labelScore.Text = "Score: " + score + Environment.NewLine + "You fell to your death!"
                                                     + Environment.NewLine + "R - reset";
             }
@@ -660,6 +667,10 @@ namespace Mini_games.allGames
             gameOver = false;
             win = false;
             score = 0;
+
+            SoundPlayer sp = new SoundPlayer();
+            sp.SoundLocation = @".\level.wav";
+            sp.PlayLooping();
 
             labelScore.Text = "Score: " + score;
 

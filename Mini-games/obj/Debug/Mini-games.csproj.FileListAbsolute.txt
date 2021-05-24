@@ -110,3 +110,5 @@ C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini_gam
 C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini_games.allGames.PlatformGameLevel1.resources
 C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini_games.allGames.PlatformGame.PlatformMenu.resources
 C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\bin\Debug\bgm1.wav
+C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\bin\Debug\ko.wav
+C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\bin\Debug\level.wav

@@ -56,6 +56,9 @@ namespace Mini_games
             this.Text = "DinoChrome";
 
             currentGame = DatabaseDC.Games.Single(name => name.Name == "DinoChrome");
+            SoundPlayer sp = new SoundPlayer();
+            sp.SoundLocation = @".\level.wav";
+            sp.PlayLooping();
         }
 
         private void buttonFB_Click(object sender, EventArgs e)
@@ -69,6 +72,9 @@ namespace Mini_games
             this.Text = "FlappyBird";
 
             currentGame = DatabaseDC.Games.Single(name => name.Name == "FlappyBird");
+            SoundPlayer sp = new SoundPlayer();
+            sp.SoundLocation = @".\level.wav";
+            sp.PlayLooping();
         }
 
         private void buttonPlatform_Click(object sender, EventArgs e)
@@ -85,6 +91,10 @@ namespace Mini_games
             this.Text = "Platform Menu";
 
             currentGame = DatabaseDC.Games.Single(name => name.Name == "Platform");
+            SoundPlayer sp = new SoundPlayer();
+            sp.SoundLocation = @".\level.wav";
+            sp.PlayLooping();
+
         }
 
         private void buttonTanks_Click(object sender, EventArgs e)
@@ -98,6 +108,9 @@ namespace Mini_games
             this.Text = "Tanks";
 
             currentGame = DatabaseDC.Games.Single(name => name.Name == "Tanks");
+            SoundPlayer sp1 = new SoundPlayer();
+            sp1.SoundLocation = @".\level.wav";
+            sp1.PlayLooping();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -112,6 +125,9 @@ namespace Mini_games
             this.Text = "Plane";
 
             currentGame = DatabaseDC.Games.Single(name => name.Name == "Plane");
+            SoundPlayer sp = new SoundPlayer();
+            sp.SoundLocation = @".\level.wav";
+            sp.PlayLooping();
         }
 
         private void buttonResults_Click(object sender, EventArgs e)
@@ -253,6 +269,9 @@ namespace Mini_games
                 panelGame.Controls.Clear();
                 panelMenu.Show();
                 UpdateScore();
+                SoundPlayer sp = new SoundPlayer();
+                sp.SoundLocation = @".\bgm1.wav";
+                sp.PlayLooping();
             }
 
             if (!panelMenu.Visible && String.Compare(this.Text, "PlatformL1") == 0 && e.KeyCode == Keys.N && platformL1.win)
@@ -269,24 +288,6 @@ namespace Mini_games
             Environment.Exit(0);
         }
 
-        private void MenuForm_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void panelGame_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
         private void starter(object sender, EventArgs e)
         {
             SoundPlayer sp = new SoundPlayer();

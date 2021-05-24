@@ -163,7 +163,6 @@ namespace Mini_games
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(901, 700);
             this.panelMenu.TabIndex = 2;
-            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             this.panelMenu.Enter += new System.EventHandler(this.starter);
             // 
             // labelDinoScore
@@ -634,7 +633,6 @@ namespace Mini_games
             this.panelGame.Name = "panelGame";
             this.panelGame.Size = new System.Drawing.Size(901, 700);
             this.panelGame.TabIndex = 3;
-            this.panelGame.Paint += new System.Windows.Forms.PaintEventHandler(this.panelGame_Paint);
             // 
             // buttonGameExit
             // 
