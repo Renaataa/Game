@@ -312,14 +312,14 @@ namespace Mini_games.allGames
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.labelOver);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelScore);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.labelOver);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.labelScore);
             this.Controls.Add(this.enemy2);
             this.Controls.Add(this.enemy1);
             this.Controls.Add(this.pictureBox6);
