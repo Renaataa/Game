@@ -6,6 +6,7 @@ namespace Mini_games.allGames
 {
     public partial class PlatformGameLevel1 : UserControl
     {
+        //WindowsMediaPlayer bg = new WindowsMediaPlayer();
         bool moveLeft, moveRight, jump, gameOver;
 
         int jumpSpeed;
@@ -551,6 +552,7 @@ namespace Mini_games.allGames
                             WindowsMediaPlayer pl1 = new WindowsMediaPlayer();
                             pl1.URL = @".\jump (2).wav";
                             pl1.controls.play();
+
                             score++;
                         }
                     }
@@ -561,11 +563,9 @@ namespace Mini_games.allGames
                         {
                             timer.Stop();
                             gameOver = true;
-
                             WindowsMediaPlayer pl3 = new WindowsMediaPlayer();
-                            pl3.URL = @".\ko.wav"; ;
+                            pl3.URL = @".\ko.wav";
                             pl3.controls.play();
-
                             labelScore.Text = "Score: " + score + Environment.NewLine + "You were killed!"
                                                                 + Environment.NewLine + "R - reset";
                         }
@@ -677,11 +677,13 @@ namespace Mini_games.allGames
             win = false;
             score = 0;
 
-            WindowsMediaPlayer pl2 = new WindowsMediaPlayer();
-            pl2.controls.stop();
-            pl2.URL = @".\level.wav";
-            pl2.controls.play();
-
+            WindowsMediaPlayer bg = new WindowsMediaPlayer();
+            bg.URL = @".\level.wav";
+            if (bg.playState == WMPPlayState.wmppsStopped)
+            {
+                bg.controls.play();
+            }
+            
             labelScore.Text = "Score: " + score;
 
             foreach (Control control in this.Controls)
