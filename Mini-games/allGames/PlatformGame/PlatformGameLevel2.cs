@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Media;
+using WMPLib;
 
 namespace Mini_games.allGames
 {
@@ -613,6 +613,9 @@ namespace Mini_games.allGames
                         if (player.Bounds.IntersectsWith(control.Bounds) && control.Visible == true)
                         {
                             control.Visible = false;
+                            WindowsMediaPlayer pl3 = new WindowsMediaPlayer();
+                            pl3.URL = @".\jump (2).wav"; ;
+                            pl3.controls.play();
                             score++;
                         }
                     }
@@ -623,9 +626,9 @@ namespace Mini_games.allGames
                         {
                             timer.Stop();
                             gameOver = true;
-                            SoundPlayer sp = new SoundPlayer();
-                            sp.SoundLocation = @".\ko.wav";
-                            sp.Play();
+                            WindowsMediaPlayer pl3 = new WindowsMediaPlayer();
+                            pl3.URL = @".\ko.wav";
+                            pl3.controls.play();
                             labelScore.Text = "Score: " + score + Environment.NewLine + "You were killed!"
                                                                 + Environment.NewLine + "R - reset";
                         }
@@ -667,9 +670,9 @@ namespace Mini_games.allGames
             {
                 timer.Stop();
                 gameOver = true;
-                SoundPlayer sp = new SoundPlayer();
-                sp.SoundLocation = @".\ko.wav";
-                sp.Play();
+                WindowsMediaPlayer pl3 = new WindowsMediaPlayer();
+                pl3.URL = @".\ko.wav";
+                pl3.controls.play();
                 labelScore.Text = "Score: " + score + Environment.NewLine + "You fell to your death!"
                                                     + Environment.NewLine + "R - reset";
             }
@@ -697,6 +700,9 @@ namespace Mini_games.allGames
             if (e.KeyCode == Keys.W && jump == false)
             {
                 jump = true;
+                WindowsMediaPlayer pl1 = new WindowsMediaPlayer();
+                pl1.URL = @".\mario_jump3.wav";
+                pl1.controls.play();
             }
         }
 
@@ -730,9 +736,10 @@ namespace Mini_games.allGames
             win = false;
             score = 0;
 
-            SoundPlayer sp = new SoundPlayer();
-            sp.SoundLocation = @".\level.wav";
-            sp.PlayLooping();
+            WindowsMediaPlayer pl2 = new WindowsMediaPlayer();
+            pl2.controls.stop();
+            pl2.URL = @".\level.wav";
+            pl2.controls.play();
 
             labelScore.Text = "Score: " + score;
 

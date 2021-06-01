@@ -118,3 +118,10 @@ C:\Users\mar31\source\Game\Mini-games\obj\Debug\Mini_games.allGames.PlaneGame.re
 C:\Users\mar31\source\Game\Mini-games\obj\Debug\Mini_games.allGames.PlatformGameLevel2.resources
 C:\Users\mar31\source\Game\Mini-games\obj\Debug\Mini_games.allGames.PlatformGameLevel1.resources
 C:\Users\mar31\source\Game\Mini-games\obj\Debug\Mini_games.allGames.PlatformGame.PlatformMenu.resources
+C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\bin\Debug\Interop.WMPLib.dll
+C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Interop.WMPLib.dll
+C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\obj\Debug\Mini-games.csproj.ResolveComReference.cache
+C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\bin\Debug\jump (2).wav
+C:\Users\Дмитрий\Source\Repos\Renaataa\Game\Mini-games\bin\Debug\mario_jump3.wav
